@@ -25,15 +25,15 @@ if($username && $password)
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "sales")
 	{
-		header("Location: ../../sales_index.html");
+		header("Location: ../../../AdminLTE-2.3.6-new-sales/index.html");
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "project_manager")
 	{
-		header("Location: ../../project_manager_index.html");
+		header("Location: ../../../AdminLTE-2.3.6-new -prom/index.html");
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "company")
 	{
-		header("Location: ../../company_index.html");
+		header("Location: ../../../AdminLTE-2.3.6-new -company/pages/tables/data.php");
 	}
 	else
 	{
