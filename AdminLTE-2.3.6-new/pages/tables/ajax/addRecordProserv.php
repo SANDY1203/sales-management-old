@@ -17,7 +17,7 @@
         $product_end_price = $_POST['product_end_price'];
 		$category = $_POST['category'];
 
-		$query = "INSERT INTO proserv(id,product_name,product_description) VALUES('$id', '$product_name', '$product_description')";
+		$query = "INSERT INTO proserv(id,product_name,product_description,product_start_price,product_end_price,category) VALUES('$id', '$product_name', '$product_description', '$product_start_price', '$product_end_price', '$category')";
 		if (!$result = mysql_query($query)) {
 	        exit(mysql_error());
 	    }

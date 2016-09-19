@@ -1730,7 +1730,7 @@
     <div class="row">
         <div class="col-md-10">
             <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal9">Add New Record</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal119">Add New Record</button>
             </div>
         </div>
     </div>
@@ -1738,7 +1738,7 @@
         <div class="col-md-12">
             <h3>Records:</h3>
 
-            <div class="records_content9"></div>
+            <div class="records_content119"></div>
         </div>
     </div>
 </div>
@@ -1747,7 +1747,7 @@
 
 <!-- Bootstrap Modals -->
 <!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="add_new_record_modal119" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1771,11 +1771,11 @@
 
                 <div class="form-group">
                     <label for="product_start_price">product_start_price</label>
-                    <input type="text" id="product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <input type="integer" id="product_start_price" placeholder="product_start_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="product_end_price">product_end_price</label>
-                    <input type="text" id="product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <input type="integer" id="product_end_price" placeholder="product_end_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="category">category</label>
@@ -1794,7 +1794,7 @@
 <!-- // Modal -->
 
 <!-- Modal - Update User details -->
-<div class="modal fade" id="update_proserv_modal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="update_proserv_modal119" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1815,11 +1815,11 @@
 
                 <div class="form-group">
                     <label for="ans_2">product_start_price</label>
-                    <input type="text" id="update_product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <input type="integer" id="update_product_start_price" placeholder="product_start_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="ans_3">product_end_price</label>
-                    <input type="text" id="update_product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <input type="integer" id="update_product_end_price" placeholder="product_end_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="ans_4">category</label>

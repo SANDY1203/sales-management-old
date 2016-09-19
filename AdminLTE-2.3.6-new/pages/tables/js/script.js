@@ -683,7 +683,7 @@ function addRecordProserv() {
 
     }, function (data, status) {
         // close the popup
-        $("#add_new_record_modal9").modal("hide");
+        $("#add_new_record_modal119").modal("hide");
 
         // read records again
         readRecordsProserv();
@@ -702,7 +702,7 @@ function addRecordProserv() {
 // READ records
 function readRecordsProserv() {
     $.get("ajax/readRecordsProserv.php", {}, function (data, status) {
-        $(".records_content9").html(data);
+        $(".records_content119").html(data);
     });
 }
 
@@ -740,7 +740,7 @@ function GetProservDetails(id) {
         }
     );
     // Open modal popup
-    $("#update_proserv_modal9").modal("show");
+    $("#update_proserv_modal119").modal("show");
 }
 
 function UpdateProservDetails() {
@@ -766,7 +766,7 @@ function UpdateProservDetails() {
         },
         function (data, status) {
             // hide modal popup
-            $("#update_proserv_modal9").modal("hide");
+            $("#update_proserv_modal119").modal("hide");
             // reload contact by using readRecords();
             readRecordsProserv();
         }
