@@ -16,6 +16,7 @@ if($username && $password)
 		$dbusername =$log["email"];
 		$dbpassword =$log["password"];
 		$dbtype =$log["role"];
+		$user_id = $log["id"];
 	}
 	 
 	if($dbusername == $username && $dbpassword == $password && $dbtype == "admin")
@@ -33,7 +34,7 @@ if($username && $password)
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "company")
 	{
-		header("Location: ../../../AdminLTE-2.3.6-new -company/pages/tables/data.php");
+		header("Location: ../../../AdminLTE-2.3.6-new -company/pages/tables/data.php?user_id=".$user_id);
 	}
 	else
 	{

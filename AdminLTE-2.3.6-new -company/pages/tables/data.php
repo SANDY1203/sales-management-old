@@ -529,7 +529,68 @@
       </ol>
     </section>
 
-   
+ <?php
+ 
+ $host = "localhost"; // MySQL host name eg. localhost
+$user = "root"; // MySQL user. eg. root ( if your on localserver)
+$password = ""; // MySQL user password  (if password is not set for your root user then keep it empty )
+$database = "sales management"; // MySQL Database name
+
+// Connect to MySQL Database 
+$db = mysql_connect($host, $user, $password) or die("Could not connect to database");
+
+// Select MySQL Database 
+mysql_select_db($database, $db);
+
+ 
+    if($_GET){
+        $user_id = $_GET['user_id'];
+		
+	
+		 // print_r($_GET);       
+    }else{
+      echo "Url has no user";
+    }
+	
+	 //include Database connection file 
+		
+
+	if(isset($_POST))
+	{
+		// include Database connection file 
+		
+
+		// get values 
+		/*$company_id = $_POST['company_id'];
+        $company_name = $_POST['company_name'];
+		$company_address = $_POST['company_address'];
+        $company_phone = $_POST['company_phone'];
+        $company_email = $_POST['company_email'];
+		$user_id = $_POST['id'];*/
+		
+	
+		
+   $query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
+
+   // fetch the result / convert resulte in to array 
+
+   WHILE ($rows = mysql_fetch_array($query)):
+  
+	  $user_id = $rows['user_id'];
+      $company_id = $rows['company_id'];
+	  $company_name = $rows['company_name']; // print_r($_GET);       
+	  $company_address = $rows['company_address'];
+	
+
+	  echo "$user_id";
+	  echo "$company_name";
+	  echo "$company_address";
+	  echo "$company_id";
+	  
+     endwhile;
+	}
+?>
+
 
 <!-- Content Section -->
 <div class="container">
