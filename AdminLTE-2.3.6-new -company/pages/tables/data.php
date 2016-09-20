@@ -528,72 +528,7 @@
         <li class="active">Data tables</li>
       </ol>
     </section>
-
- <?php
- 
- $host = "localhost"; // MySQL host name eg. localhost
-$user = "root"; // MySQL user. eg. root ( if your on localserver)
-$password = ""; // MySQL user password  (if password is not set for your root user then keep it empty )
-$database = "sales management"; // MySQL Database name
-
-// Connect to MySQL Database 
-$db = mysql_connect($host, $user, $password) or die("Could not connect to database");
-
-// Select MySQL Database 
-mysql_select_db($database, $db);
-
- 
-    if($_GET){
-        $user_id = $_GET['user_id'];
-		
-	
-		 // print_r($_GET);       
-    }else{
-      echo "Url has no user";
-    }
-	
-	 //include Database connection file 
-		
-
-	if(isset($_POST))
-	{
-		// include Database connection file 
-		
-
-		// get values 
-		/*$company_id = $_POST['company_id'];
-        $company_name = $_POST['company_name'];
-		$company_address = $_POST['company_address'];
-        $company_phone = $_POST['company_phone'];
-        $company_email = $_POST['company_email'];
-		$user_id = $_POST['id'];*/
-		
-	
-		
-   $query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
-
-   // fetch the result / convert resulte in to array 
-
-   WHILE ($rows = mysql_fetch_array($query)):
-  
-	  $user_id = $rows['user_id'];
-      $company_id = $rows['company_id'];
-	  $company_name = $rows['company_name']; // print_r($_GET);       
-	  $company_address = $rows['company_address'];
-	
-
-	  echo "$user_id";
-	  echo "$company_name";
-	  echo "$company_address";
-	  echo "$company_id";
-	  
-     endwhile;
-	}
-?>
-
-
-<!-- Content Section -->
-<div class="container">
+	<div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>PROJECT TABLE DATA</h1>
@@ -614,122 +549,139 @@ mysql_select_db($database, $db);
         </div>
     </div>
 </div>
-<!-- /Content Section -->
+	
+	
+<div class="box-body table-responsive no-padding">
+     <table class="table table-hover">
+          <tr>
+              <th>user_id</th>
+              <th>company_id</th>
+              <th>project_name</th>
+              <th>project_desc</th>
+              <th>project_company_id</th>
+              <th>project_price</th>
+              <th>project_team</th>
+              <th>project_status</th>
+          </tr>
+          <tr>
+     <?php
+$host = "localhost"; // MySQL host name eg. localhost
+$user = "root"; // MySQL user. eg. root ( if your on localserver)
+$password = ""; // MySQL user password  (if password is not set for your root user then keep it empty )
+$database = "sales management"; // MySQL Database name
+
+// Connect to MySQL Database 
+$db = mysql_connect($host, $user, $password) or die("Could not connect to database");
+
+// Select MySQL Database 
+mysql_select_db($database, $db);
 
 
-<!-- Bootstrap Modals -->
-<!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
-            </div>
-            <div class="modal-body">
-			
+    if($_GET){
+        $user_id = $_GET['user_id'];
 
-                <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
-                </div>
-				
-				<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="project_name" placeholder="project_name" class="form-control"/>
-                </div>
+		
+		
+		 // print_r($_GET);       
+    }else{
+      echo "Url has no user";
+    }
+	
+	// include Database connection file 
+		
 
-                <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="project_desc" placeholder="project_desc" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="project_company_id" placeholder="project_company_id" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="project_price" placeholder="project_price" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="project_team" placeholder="project_team" class="form-control"/>
-                </div>
+	if(isset($_POST))
+	{
+		// include Database connection file 
+		
 
-                
-				<div class="form-group">
-                    <label for="project_status">project_status</label>
-                    <input type="text" id="project_status" placeholder="project_status" class="form-control"/>
-                </div>
-				
-				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="user_id3" placeholder="user_id" class="form-control"/>
-                </div>
+		// get values 
+		/*$company_id = $_POST['company_id'];
+        $company_name = $_POST['company_name'];
+		$company_address = $_POST['company_address'];
+        $company_phone = $_POST['company_phone'];
+        $company_email = $_POST['company_email'];
+		$user_id = $_POST['id'];*/
+		
+	
+		
+   $query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
+   
+  
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="addRecordProject()">Add Record</button>
-            </div>
-        </div>
+   // fetch the result / convert resulte in to array 
+
+   WHILE ($rows = mysql_fetch_array($query)):
+  
+	  $user_id = $rows['user_id'];
+      $company_id = $rows['company_id'];
+	  $company_name = $rows['company_name']; // print_r($_GET);       
+	  $company_address = $rows['company_address'];
+	
+
+	 echo "$user_id"."\t"."\t"."\t"."\t";
+	  echo "$company_name"."\t"."\t"."\t"."\t";
+	  echo "$company_address"."\t"."\t"."\t"."\t";
+	  echo "$company_id"."\t"."\t"."\t"."\t";
+	  
+	
+	{
+	
+	
+	
+	$query = mysql_query("SELECT * FROM projects WHERE project_company_id = '$company_id'");
+
+   // fetch the result / convert resulte in to array 
+ echo('<table>');
+   WHILE ($rows = mysql_fetch_array($query)):
+ 
+	 $user_id = $rows['user_id'];
+      //$company_id = $rows['company_id'];
+	  $project_name = $rows['project_name']; // print_r($_GET);       
+	  $project_desc = $rows['project_desc'];
+	  $project_company_id = $rows['project_company_id'];
+	  $project_price = $rows['project_price'];
+	  $project_team = $rows['project_team'];
+	  $project_status = $rows['project_status'];
+	
+	  
+
+
+	
+	 // echo "$user_id"."\t"."\t"."\t"."\t";
+	  echo "$user_id"."\t"."\t"."\t"."\t";
+	  echo "$project_name"."\t"."\t"."\t"."\t";
+	  echo "$project_desc"."\t"."\t"."\t"."\t";
+	  echo "$project_company_id"."\t"."\t"."\t"."\t";
+	  echo "$project_price"."\t"."\t"."\t"."\t";
+	  echo "$project_team"."\t"."\t"."\t"."\t";
+	  echo "$project_status"."\t"."\t"."\t"."\t";
+	
+	 
+	 
+	 endwhile;
+
+	}
+	  endwhile;
+	}
+	echo('<table>');
+?>
+
+              </tr>
+       </table>
     </div>
-</div>
-<!-- // Modal -->
+	
+	
+	
 
-<!-- Modal - Update User details -->
-<div class="modal fade" id="update_project_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
-            </div>
-            <div class="modal-body">
-			<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="update_project_name" placeholder="project_name" class="form-control"/>
-                </div>
 
-                <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="update_project_desc" placeholder="project_desc" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="update_project_company_id" placeholder="project_company_id" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="update_project_price" placeholder="project_price" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="update_project_team" placeholder="project_team" class="form-control"/>
-                </div>
 
-                
-				<div class="form-group">
-                    <label for="project_status">project_status</label>
-                    <input type="text" id="update_project_status" placeholder="project_status" class="form-control"/>
-                </div>
 
-                     
-				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id2" placeholder="user_id" class="form-control"/>
-                </div>
-				
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateProjectDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_project_id">
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Content Section -->
+
+
+
 <!-- Content Section -->
 
 <!-- Content Section -->
