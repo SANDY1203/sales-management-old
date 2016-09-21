@@ -47,6 +47,9 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<div id="dom-target123" style="display: none;">
+    
+</div>
 <div class="wrapper">
 
   <header class="main-header">
@@ -528,8 +531,153 @@
         <li class="active">Data tables</li>
       </ol>
     </section>
-
+<div id="dom-target123" style="display: none;">
+    <?php 
+        if($_GET){
+        $user_id = $_GET['user_id'];}//Again, do some operation, get the output.
+        echo htmlspecialchars($user_id); /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
+    ?>
   
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>PROJECT TABLE DATA</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="pull-right">
+                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Records:</h3>
+
+            <div class="records_content5"></div>
+        </div>
+    </div>
+</div>
+<!-- /Content Section -->
+
+
+</div>
+<input type="hidden" name="mainuserid123" id="mainuserid123" value="<?php echo $user_id; ?>" />
+<!-- Bootstrap Modals -->
+<!-- Modal - Add New Record/User -->
+<div class="modal fade" id="add_new_record_modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
+            </div>
+            <div class="modal-body">
+			
+
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                </div>
+				
+				<div class="form-group">
+                    <label for="project_name">project_name</label>
+                    <input type="text" id="project_name" placeholder="project_name" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="project_desc">project_desc</label>
+                    <input type="text" id="project_desc" placeholder="project_desc" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="project_company_id">project_company_id</label>
+                    <input type="text" id="project_company_id" placeholder="project_company_id" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="project_price">project_price</label>
+                    <input type="text" id="project_price" placeholder="project_price" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="project_team">project_team</label>
+                    <input type="text" id="project_team" placeholder="project_team" class="form-control"/>
+                </div>
+
+                
+				<div class="form-group">
+                    <label for="project_status">project_status</label>
+                    <input type="text" id="project_status" placeholder="project_status" class="form-control"/>
+                </div>
+				
+				<div class="form-group">
+                    <label for="user_id">user_id</label>
+                    <input type="text" id="user_id3" placeholder="user_id" class="form-control"/>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="addRecordProject()">Add Record</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // Modal -->
+
+<!-- Modal - Update User details -->
+<div class="modal fade" id="update_project_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Update</h4>
+            </div>
+            <div class="modal-body">
+			<div class="form-group">
+                    <label for="project_name">project_name</label>
+                    <input type="text" id="update_project_name" placeholder="project_name" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="project_desc">project_desc</label>
+                    <input type="text" id="update_project_desc" placeholder="project_desc" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="project_company_id">project_company_id</label>
+                    <input type="text" id="update_project_company_id" placeholder="project_company_id" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="project_price">project_price</label>
+                    <input type="text" id="update_project_price" placeholder="project_price" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="project_team">project_team</label>
+                    <input type="text" id="update_project_team" placeholder="project_team" class="form-control"/>
+                </div>
+
+                
+				<div class="form-group">
+                    <label for="project_status">project_status</label>
+                    <input type="text" id="update_project_status" placeholder="project_status" class="form-control"/>
+                </div>
+
+                     
+				<div class="form-group">
+                    <label for="user_id">user_id</label>
+                    <input type="text" id="update_user_id2" placeholder="user_id" class="form-control"/>
+                </div>
+				
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="UpdateProjectDetails()" >Save Changes</button>
+                <input type="hidden" id="hidden_project_id">
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Content Section -->
 <div class="container">
     <div class="row">

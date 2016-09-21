@@ -568,28 +568,7 @@ function DeleteProject(id) {
         );
     }
 }
-function GetINVOICEDetails(id){
-    // Add User ID to the hidden field for furture usage
-    $("#hidden_project_id1").val(id);
-    $.post("ajax/readProjectDetails.php", {
-            id: id
-        },
-        function (data, status) {
-            // PARSE json data
-            var user = JSON.parse(data);
-            // Assing existing values to the modal popup fields
-            $("#update_project_name1").val(user.project_name);
-            $("#update_project_desc1").val(user.project_desc);
-            $("#update_project_company_id1").val(user.project_company_id);
-            $("#update_project_price1").val(user.project_price);
-            $("#update_project_team1").val(user.project_team);
-			$("#update_project_status123").val(user.project_status);
-            $("#update_user_id21").val(user.user_id);
-        }
-    );
-    // Open modal popup
-    $("#invoice_project_modal").modal("show");
-}
+
 
 
 function GetProjectDetails(id) {
@@ -683,7 +662,7 @@ function addRecordProserv() {
 
     }, function (data, status) {
         // close the popup
-        $("#add_new_record_modal119").modal("hide");
+        $("#add_new_record_modal9").modal("hide");
 
         // read records again
         readRecordsProserv();
@@ -702,7 +681,7 @@ function addRecordProserv() {
 // READ records
 function readRecordsProserv() {
     $.get("ajax/readRecordsProserv.php", {}, function (data, status) {
-        $(".records_content119").html(data);
+        $(".records_content9").html(data);
     });
 }
 
@@ -740,7 +719,7 @@ function GetProservDetails(id) {
         }
     );
     // Open modal popup
-    $("#update_proserv_modal119").modal("show");
+    $("#update_proserv_modal9").modal("show");
 }
 
 function UpdateProservDetails() {
@@ -766,7 +745,7 @@ function UpdateProservDetails() {
         },
         function (data, status) {
             // hide modal popup
-            $("#update_proserv_modal119").modal("hide");
+            $("#update_proserv_modal9").modal("hide");
             // reload contact by using readRecords();
             readRecordsProserv();
         }

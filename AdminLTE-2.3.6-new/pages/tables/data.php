@@ -1146,8 +1146,12 @@
     <div class="row">
         <div class="col-md-10">
             <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
+                <button class="btn btn-success" data-toggle="modal" onclick="location.href='invoice.php'">INVOICE</button>
+				<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">QUOTATION</button>
+				 <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
             </div>
+        </div>
+		
         </div>
     </div>
     <div class="row">
@@ -1270,205 +1274,6 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" onclick="UpdateProjectDetails()" >Save Changes</button>
                 <input type="hidden" id="hidden_project_id">
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal - Update User details -->
-<div class="modal fade" id="invoice_project_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-	<div class="modal-content">
-            <div class="content-wrapper">
-    
-
-    <!-- Main content -->
-    <section class="invoice">
-       <p><img alt="" src="http://localhost/sales-management/INVOICE.png" style="height:110px; width:720px" /></p>
-
-<table align="left" border="0" cellpadding="0" cellspacing="0" style="height:200px; width:720px">
-	<tbody>
-		<tr>
-			<td style="text-align:justify; vertical-align:middle; white-space:nowrap; width:360px">
-			<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> &nbsp;INVOICE TO</strong></p>
-
-			<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Company-name</p>
-			
-			<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Company-ADDRESS</p>
-			</td>
-			<td style="height:100px; text-align:justify; vertical-align:middle; white-space:nowrap">
-			<table align="center" border="0" cellpadding="0" cellspacing="0" style="height:100px; width:375px">
-				<tbody>
-					<tr>
-						<td style="width:180px"><strong>INVOICE NO.</strong></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td><strong>INVOICE DATE.</strong></td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td><strong>PO No.</strong></td>
-						<td>&nbsp;</td>
-					</tr>
-				</tbody>
-			</table>
-			</td>
-		</tr>
-		<tr>
-			<td style="white-space:nowrap; width:360px"></td>
-			<td style="width:360px">
-			<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> &nbsp;TOTAL AMOUNT</strong></p>
-
-			<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;KES 69600</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:720px">
-	<tbody>
-		<tr>
-			<td style="height:50px; text-align:justify; vertical-align:middle; white-space:nowrap; width:360px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Item Description</strong></td>
-			<td style="text-align:justify; vertical-align:middle; white-space:nowrap; width:120px">&nbsp; &nbsp; &nbsp; <strong>&nbsp;Unite Prise</strong></td>
-			<td style="text-align:justify; vertical-align:middle; white-space:nowrap; width:120px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <strong>Qty</strong></td>
-			<td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Total</strong></td>
-		</tr>
-		<tr>
-			<td style="height:100px; white-space:nowrap; width:180px">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-	</tbody>
-</table>
-
-
-<table border="0" cellpadding="0" cellspacing="0" style="width:720px;">
-	<tbody>
-		<tr>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong><font color="white">PIN No.</font></strong></td>
-			<td style="background-color:black; width:180px;"><font color="white">Po...................</font></td>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> &nbsp;<font color="white">Subtotal</font></strong></td>
-			<td style="background-color:black; width:180px;"><font color="white">KES 60000</font></td>
-		</tr>
-		<tr>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong><font color="white">Served By:</font></strong></td>
-			<td style="background-color:black; width:180px;"><font color="white">Bhavya barot</font></td>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong><font color="white">TAX: VAT 16%</font></strong></td>
-			<td style="background-color:black; width:180px;"><font color="white">KES 9600</font></td>
-		</tr>
-		
-	</tbody>
-</table>
-
-<table border="0" cellpadding="0" cellspacing="0" style="width:720px">
-	<tbody>
-		<tr>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong><font color="white">MOBILE</font></strong></td>
-			<td style="background-color:black; width:180px;"><font color="white">8054565454</font></td>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong><font color="white">GRAND TOTAL</font></strong></td>
-<td style="background-color:black; width:180px;"><font color="white">KES 69600</font></td>
-		</tr>
-		<tr>
-			<td style="background-color:black; width:180px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong><font color="white">EMAIL</font></strong></td>
-			<td style="background-color:black; width:180px;"><font color="white">abc@biocart.io</font></td>
-			<td style="background-color:black; width:180px;"><font color="white">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font></td>
-			<td style="background-color:black; width:180px;"><font color="white">&nbsp;</font></td>
-		</tr>
-	</tbody>
-</table>
-
-<p>&nbsp;</p>
-
-<hr />
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> &nbsp;Sign&amp;Omcal Stamp</strong></p>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<hr />
-<p>&nbsp;</p>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> THANK YOU</strong></p>
-
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;we really appreciate your business</p>
-
-<hr />
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<hr />
-<p>&nbsp;</p>
-
-      <!-- this row will not appear when printing -->
-      <div class="row no-print">
-        <div class="col-xs-12">
-          <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-          <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
-          </button>
-          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-            <i class="fa fa-download"></i> Generate PDF
-          </button>
-        </div>
-      </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateProjectDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_project_id1">
-            </div>
-        </div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
-            </div>
-            <div class="modal-body">
-			
-			<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="update_project_name1" placeholder="project_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="update_project_desc1" placeholder="project_desc" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="update_project_company_id1" placeholder="project_company_id" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="update_project_price1" placeholder="project_price" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="update_project_team1" placeholder="project_team" class="form-control"/>
-                </div>
-
-                
-				<div class="form-group">
-                    <label for="project_status">project_status</label>
-                    <input type="text" id="update_project_status123" placeholder="project_status" class="form-control"/>
-                </div>
-
-                     
-				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id21" placeholder="user_id" class="form-control"/>
-                </div>
-				
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateProjectDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_project_id1">
             </div>
         </div>
     </div>
@@ -1730,7 +1535,7 @@
     <div class="row">
         <div class="col-md-10">
             <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal119">Add New Record</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal9">Add New Record</button>
             </div>
         </div>
     </div>
@@ -1738,7 +1543,7 @@
         <div class="col-md-12">
             <h3>Records:</h3>
 
-            <div class="records_content119"></div>
+            <div class="records_content9"></div>
         </div>
     </div>
 </div>
@@ -1747,7 +1552,7 @@
 
 <!-- Bootstrap Modals -->
 <!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal119" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="add_new_record_modal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1771,11 +1576,11 @@
 
                 <div class="form-group">
                     <label for="product_start_price">product_start_price</label>
-                    <input type="integer" id="product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <input type="text" id="product_start_price" placeholder="product_start_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="product_end_price">product_end_price</label>
-                    <input type="integer" id="product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <input type="text" id="product_end_price" placeholder="product_end_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="category">category</label>
@@ -1794,7 +1599,7 @@
 <!-- // Modal -->
 
 <!-- Modal - Update User details -->
-<div class="modal fade" id="update_proserv_modal119" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="update_proserv_modal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -1815,11 +1620,11 @@
 
                 <div class="form-group">
                     <label for="ans_2">product_start_price</label>
-                    <input type="integer" id="update_product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <input type="text" id="update_product_start_price" placeholder="product_start_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="ans_3">product_end_price</label>
-                    <input type="integer" id="update_product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <input type="text" id="update_product_end_price" placeholder="product_end_price" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="ans_4">category</label>
