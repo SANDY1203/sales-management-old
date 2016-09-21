@@ -809,8 +809,8 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id22">ID</label>
+                    <input type="text" id="id22" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="user_id">user_id</label>
@@ -953,8 +953,8 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id26">ID</label>
+                    <input type="text" id="id26" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="question">question</label>
@@ -1035,8 +1035,8 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id21">ID</label>
+                    <input type="text" id="id21" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="contact_name">contact_name</label>
@@ -1174,8 +1174,8 @@
 			
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id23">ID</label>
+                    <input type="text" id="id23" placeholder="ID" class="form-control"/>
                 </div>
 				
 				<div class="form-group">
@@ -1512,8 +1512,8 @@
 			
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id25">ID</label>
+                    <input type="text" id="id25" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="proserv_id">proserv_id</label>
@@ -1757,8 +1757,8 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id24">ID</label>
+                    <input type="text" id="id24" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="product_name">product_name</label>
@@ -1967,8 +1967,8 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
+                    <label for="id27">ID</label>
+                    <input type="text" id="id27" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
                     <label for="lead">lead</label>

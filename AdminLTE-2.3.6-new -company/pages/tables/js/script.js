@@ -1,7 +1,7 @@
 //PROJECT section
 function addRecordProject() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id23").val();
     var project_name = $("#project_name").val();
     var project_desc = $("#project_desc").val();
     var project_company_id = $("#project_company_id").val();
@@ -30,7 +30,7 @@ function addRecordProject() {
         readRecordsProject();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id23").val("");
         $("#project_name").val("");
         $("#project_desc").val("");
         $("#project_company_id").val("");

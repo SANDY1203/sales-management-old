@@ -235,7 +235,7 @@ $(document).ready(function () {
 //contact section
 function addRecordContact() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id21").val();
     var contact_name = $("#contact_name").val();
     var contact_position = $("#contact_position").val();
     var contact_number_one = $("#contact_number_one").val();
@@ -262,7 +262,7 @@ function addRecordContact() {
         readRecordsContact();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id21").val("");
         $("#contact_name").val("");
         $("#contact_position").val("");
         $("#contact_number_one").val("");
@@ -362,7 +362,7 @@ $(document).ready(function () {
 //FEEDBACK section
 function addRecordFeedback() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id22").val();
     var user_id = $("#user_id2").val();
     var ans_1 = $("#ans_1").val();
     var ans_2 = $("#ans_2").val();
@@ -391,7 +391,7 @@ function addRecordFeedback() {
         readRecordsFeedback();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id22").val("");
         $("#user_id2").val("");
         $("#ans_1").val("");
         $("#ans_2").val("");
@@ -507,7 +507,7 @@ $(document).ready(function () {
 //PROJECT section
 function addRecordProject() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id23").val();
     var project_name = $("#project_name").val();
     var project_desc = $("#project_desc").val();
     var project_company_id = $("#project_company_id").val();
@@ -536,7 +536,7 @@ function addRecordProject() {
         readRecordsProject();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id23").val("");
         $("#project_name").val("");
         $("#project_desc").val("");
         $("#project_company_id").val("");
@@ -664,7 +664,7 @@ $(document).ready(function () {
 
 function addRecordProserv() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id24").val();
     var product_name = $("#product_name").val();
     var product_description = $("#product_description").val();
     var product_start_price = $("#product_start_price").val();
@@ -689,7 +689,7 @@ function addRecordProserv() {
         readRecordsProserv();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id24").val("");
         $("#product_name").val("");
         $("#product_description").val("");
         $("#product_start_price").val("");
@@ -790,7 +790,7 @@ $(document).ready(function () {
 
 function addRecordProserv_Project() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id25").val();
     var proserv_id = $("#proserv_id1").val();
     var project_contractor_id = $("#project_contractor_id1").val();
     var project_price = $("#project_price1").val();
@@ -817,7 +817,7 @@ function addRecordProserv_Project() {
         readRecordsProserv_Project();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id25").val("");
         $("#proserv_id1").val("");
         $("#project_contractor_id1").val("");
         $("#project_price1").val("");
@@ -920,7 +920,7 @@ $(document).ready(function () {
 
 function addRecordQuestions() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id26").val();
     var question = $("#question").val();
     
 	
@@ -938,7 +938,7 @@ function addRecordQuestions() {
         readRecordsQuestions();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id26").val("");
         $("#question").val("");
        
 
@@ -1268,7 +1268,7 @@ $(document).ready(function () {
 
 function addRecordQuotation() {
     // get values
-	var id = $("#id").val();
+	var id = $("#id27").val();
     var lead = $("#lead").val();
     var opportunity = $("#opportunity").val();
     var proposal = $("#proposal").val();
@@ -1313,7 +1313,7 @@ function addRecordQuotation() {
         readRecordsQuotation();
 
         // clear fields from the popup
-        $("#id").val("");
+        $("#id27").val("");
         $("#lead").val("");
         $("#opportunity").val("");
         $("#proposal").val("");

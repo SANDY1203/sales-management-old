@@ -548,7 +548,7 @@
         <div class="col-md-12">
             <h3>Records:</h3>
 
-            <div class="records_content7"></div>
+            <div> <?php  include("ajax/readRecordsTeam_Members.php"); ?> </div>
         </div>
     </div>
 </div>
