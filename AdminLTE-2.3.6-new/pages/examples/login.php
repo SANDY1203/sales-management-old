@@ -30,7 +30,7 @@ if($username && $password)
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "project_manager")
 	{
-		header("Location: ../../../AdminLTE-2.3.6-new -prom/index.html");
+		header("Location: ../../../AdminLTE-2.3.6-new -prom/pages/tables/data.php?user_id=".$user_id);
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "company")
 	{

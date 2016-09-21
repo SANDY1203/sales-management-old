@@ -529,147 +529,100 @@
       </ol>
     </section>
 	<div class="container">
+    
+    
     <div class="row">
         <div class="col-md-12">
-            <h1>PROJECT TABLE DATA</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Records:</h3>
+		 
+            
 
-            <div class="records_content5"></div>
-        </div>
-    </div>
-</div>
-	
-	
-<div class="box-body table-responsive no-padding">
-     <table class="table table-hover">
-          <tr>
-              <th>user_id</th>
-              <th>company_id</th>
-              <th>project_name</th>
-              <th>project_desc</th>
-              <th>project_company_id</th>
-              <th>project_price</th>
-              <th>project_team</th>
-              <th>project_status</th>
-          </tr>
-          <tr>
-     <?php
-$host = "localhost"; // MySQL host name eg. localhost
-$user = "root"; // MySQL user. eg. root ( if your on localserver)
-$password = ""; // MySQL user password  (if password is not set for your root user then keep it empty )
-$database = "sales management"; // MySQL Database name
-
-// Connect to MySQL Database 
-$db = mysql_connect($host, $user, $password) or die("Could not connect to database");
-
-// Select MySQL Database 
-mysql_select_db($database, $db);
-
-
-    if($_GET){
+            <?php
+	// include Database connection file 
+	include("ajax/db_connection.php");
+	 if($_GET){
         $user_id = $_GET['user_id'];
 
 		
 		
 		 // print_r($_GET);       
-    }else{
-      echo "Url has no user";
     }
 	
-	// include Database connection file 
-		
-
-	if(isset($_POST))
-	{
-		// include Database connection file 
-		
-
-		// get values 
-		/*$company_id = $_POST['company_id'];
-        $company_name = $_POST['company_name'];
-		$company_address = $_POST['company_address'];
-        $company_phone = $_POST['company_phone'];
-        $company_email = $_POST['company_email'];
-		$user_id = $_POST['id'];*/
-		
-	
-		
-   $query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
-   
-  
-
-   // fetch the result / convert resulte in to array 
-
-   WHILE ($rows = mysql_fetch_array($query)):
+	$query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
+	WHILE ($rows = mysql_fetch_array($query)):
   
 	  $user_id = $rows['user_id'];
       $company_id = $rows['company_id'];
 	  $company_name = $rows['company_name']; // print_r($_GET);       
 	  $company_address = $rows['company_address'];
-	
-
-	 echo "$user_id"."\t"."\t"."\t"."\t";
-	  echo "$company_name"."\t"."\t"."\t"."\t";
-	  echo "$company_address"."\t"."\t"."\t"."\t";
-	  echo "$company_id"."\t"."\t"."\t"."\t";
-	  
-	
-	{
-	
-	
-	
-	$query = mysql_query("SELECT * FROM projects WHERE project_company_id = '$company_id'");
-
-   // fetch the result / convert resulte in to array 
- echo('<table>');
-   WHILE ($rows = mysql_fetch_array($query)):
- 
-	 $user_id = $rows['user_id'];
-      //$company_id = $rows['company_id'];
-	  $project_name = $rows['project_name']; // print_r($_GET);       
-	  $project_desc = $rows['project_desc'];
-	  $project_company_id = $rows['project_company_id'];
-	  $project_price = $rows['project_price'];
-	  $project_team = $rows['project_team'];
-	  $project_status = $rows['project_status'];
-	
-	  
-
-
-	
-	 // echo "$user_id"."\t"."\t"."\t"."\t";
-	  echo "$user_id"."\t"."\t"."\t"."\t";
-	  echo "$project_name"."\t"."\t"."\t"."\t";
-	  echo "$project_desc"."\t"."\t"."\t"."\t";
-	  echo "$project_company_id"."\t"."\t"."\t"."\t";
-	  echo "$project_price"."\t"."\t"."\t"."\t";
-	  echo "$project_team"."\t"."\t"."\t"."\t";
-	  echo "$project_status"."\t"."\t"."\t"."\t";
-	
-	 
-	 
-	 endwhile;
-
-	}
+	  $company_phone = $rows['company_phone'];
+	  $company_email = $rows['company_email'];
+	  $user_id = $rows['user_id'];
 	  endwhile;
-	}
-	echo('<table>');
-?>
+	  
+	$data ='<p align="center"><strong>WELCOME &nbsp; '. $company_name . '</strong></p>
+	<p align="right"><strong>NAME:'. $company_name . '</strong></p>
+	<p align="right"><strong>ADDRESS:'. $company_address . '</strong></p>
+	<p align="right"><strong>PH NO:'. $company_phone . '</strong></p>
+    <p align="right"><strong>EMAIL:'. $company_email . '</strong>';
+	
 
-              </tr>
-       </table>
+	// Design initial table header 
+	$data .= '<table class="table table-bordered table-striped">
+						<tr>
+							<th>id</th>
+					  <th>project_name</th>
+                      <th>project_desc</th>
+                      <th>project_company_id</th>
+					  <th>project_price</th>
+					  <th>project_team</th>
+					  <th>project_status</th>
+					  <th>user_id</th>
+							
+						</tr>';
+
+	$query = "SELECT * FROM projects WHERE project_company_id = '$company_id' ";
+
+	if (!$result = mysql_query($query)) {
+        exit(mysql_error());
+    }
+
+    // if query results contains rows then featch those rows 
+    if(mysql_num_rows($result) > 0)
+    {
+    	$number = 1;
+    	while($row = mysql_fetch_assoc($result))
+    	{
+    		$data .= '<tr>
+				<td>'. $row['id'] . '</td>
+			     <td>'. $row['project_name'] . '</td>
+				 <td>'. $row['project_desc'] . '</td>
+				 <td>'. $row['project_company_id'] . '</td>
+				 <td>'. $row['project_price'] . '</td>
+				 <td>'. $row['project_team'] . '</td>
+				 <td>'. $row['project_status'] . '</td>
+                <td>'. $row['user_id'] . '</td>
+				
+				
+    		</tr>';
+    		
+    	}
+    }
+    else
+    {
+    	// records now found 
+    	$data .= '<tr><td colspan="6">Records not found!</td></tr>';
+    }
+
+    $data .= '</table>';
+
+    echo $data;
+?>
+        </div>
     </div>
+</div>
+	
+	
+
 	
 	
 	

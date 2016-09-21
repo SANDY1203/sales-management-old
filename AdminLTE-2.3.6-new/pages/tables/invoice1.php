@@ -1,9 +1,103 @@
+<?php
+
+ 
+    /*if($_GET){
+        $user_id = $_GET['user_id'];
+		
+	
+		 // print_r($_GET);       
+    }else{
+      echo "Url has no user";
+    }
+	
+	 //include Database connection file 
+		
+
+	if(isset($_POST))
+	{
+		// include Database connection file 
+		
+
+		// get values 
+		/*$company_id = $_POST['company_id'];
+        $company_name = $_POST['company_name'];
+		$company_address = $_POST['company_address'];
+        $company_phone = $_POST['company_phone'];
+        $company_email = $_POST['company_email'];
+		$user_id = $_POST['id'];*/
+		
+	
+		
+   /*$query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
+
+   // fetch the result / convert resulte in to array 
+
+   WHILE ($rows = mysql_fetch_array($query)):
+  
+	  $user_id = $rows['user_id'];
+      $company_id = $rows['company_id'];
+	  $company_name = $rows['company_name']; // print_r($_GET);       
+	  $company_address = $rows['company_address'];
+	
+
+	  echo "$user_id";
+	  echo "$company_name";
+	  echo "$company_address";
+	  echo "$company_id";
+	  
+     endwhile;
+	}*/
+
+include("ajax/db_connection.php");
+
+$number = 1;
+$total = 0;
+
+    foreach($_POST['checkboxName'] as $value)
+{
+    echo $value.'<br>';
+	
+	$query = mysql_query("SELECT * FROM projects WHERE id = '$value'");
+	WHILE ($rows = mysql_fetch_array($query)):
+	  ${"project_name$number"} = $rows['project_name'];
+      ${"project_desc$number"} = $rows['project_desc'];
+	  ${"project_company_id$number"} = $rows['project_company_id']; // print_r($_GET);       
+	  ${"project_price$number"} = $rows['project_price'];
+	  ${"project_status$number"} = $rows['project_status'];
+	  
+	  
+
+	  echo "${"project_name$number"}";
+	  
+	
+	endwhile;
+	$query1 = mysql_query("SELECT * FROM company WHERE company_id = '${"project_company_id$number"}'");
+	WHILE ($rows = mysql_fetch_array($query1)):
+	  ${"company_id$number"} = $rows['company_id'];
+      ${"company_name$number"} = $rows['company_name'];
+	  ${"company_address$number"} = $rows['company_address']; // print_r($_GET);       
+	  ${"company_phone$number"} = $rows['company_phone'];
+	  ${"company_email$number"} = $rows['company_email'];
+	  
+	  
+	
+
+	  echo "${"company_id$number"}";
+	  $total = $total + ${"project_price$number"};
+	  
+	$number++;
+	endwhile;
+	
+}
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Data Tables</title>
+  <title>AdminLTE 2 | Invoice</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -12,29 +106,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-  <!-- Jquery JS file -->
-<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-
-<!-- Bootstrap JS file -->
-<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-
-<!-- Custom JS file -->
-<script type="text/javascript" src="js/script.js"></script>
-
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-75591362-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
@@ -47,9 +120,6 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div id="dom-target123" style="display: none;">
-    
-</div>
 <div class="wrapper">
 
   <header class="main-header">
@@ -176,7 +246,6 @@
                       <i class="fa fa-users text-red"></i> 5 new members joined
                     </a>
                   </li>
-
                   <li>
                     <a href="#">
                       <i class="fa fa-shopping-cart text-green"></i> 25 sales made
@@ -383,9 +452,9 @@
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Charts</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
@@ -398,25 +467,24 @@
           <a href="#">
             <i class="fa fa-laptop"></i>
             <span>UI Elements</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
             <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
             <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
             <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
             <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-edit"></i> <span>Forms</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
@@ -424,16 +492,16 @@
             <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
         </li>
-        <li class="treeview active">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Tables</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li class="active"><a href="data.php"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+            <li><a href="../tables/data.php"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
         <li>
@@ -455,31 +523,31 @@
             </span>
           </a>
         </li>
-        <li class="treeview">
+        <li class="treeview active">
           <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="../examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="../examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="../examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="../examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="../examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="../examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="../examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="../examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li class="active"><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+            <li><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+            <li><a href="pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
@@ -522,394 +590,198 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>advanced tables</small>
+        Invoice
+        <small>#007612</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="#">Examples</a></li>
+        <li class="active">Invoice</li>
       </ol>
     </section>
-<div id="dom-target123" style="display: none;">
-    <?php 
-        if($_GET){
-        $user_id = $_GET['user_id'];}//Again, do some operation, get the output.
-        echo htmlspecialchars($user_id); /* You have to escape because the result
-                                           will not be valid HTML otherwise. */
-    ?>
-  
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>PROJECT TABLE DATA</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Records:</h3>
 
-            <div class="records_content5"></div>
-        </div>
-    </div>
-</div>
-<!-- /Content Section -->
-
-
-</div>
-<input type="hidden" name="mainuserid123" id="mainuserid123" value="<?php echo $user_id; ?>" />
-<!-- Bootstrap Modals -->
-<!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
-            </div>
-            <div class="modal-body">
-			
-
-                <div class="form-group">
-                    <label for="id">ID</label>
-                    <input type="text" id="id" placeholder="ID" class="form-control"/>
-                </div>
-				
-				<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="project_name" placeholder="project_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="project_desc" placeholder="project_desc" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="project_company_id" placeholder="project_company_id" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="project_price" placeholder="project_price" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="project_team" placeholder="project_team" class="form-control"/>
-                </div>
-
-                
-				<div class="form-group">
-                    <label for="project_status">project_status</label>
-                    <input type="text" id="project_status" placeholder="project_status" class="form-control"/>
-                </div>
-				
-				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="user_id3" placeholder="user_id" class="form-control"/>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="addRecordProject()">Add Record</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // Modal -->
-
-<!-- Modal - Update User details -->
-<div class="modal fade" id="update_project_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
-            </div>
-            <div class="modal-body">
-			<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="update_project_name" placeholder="project_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="update_project_desc" placeholder="project_desc" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="update_project_company_id" placeholder="project_company_id" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="update_project_price" placeholder="project_price" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="update_project_team" placeholder="project_team" class="form-control"/>
-                </div>
-
-                
-				<div class="form-group">
-                    <label for="project_status">project_status</label>
-                    <input type="text" id="update_project_status" placeholder="project_status" class="form-control"/>
-                </div>
-
-                     
-				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id2" placeholder="user_id" class="form-control"/>
-                </div>
-				
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateProjectDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_project_id">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Content Section -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>TEAM-MEMBER TABLE DATA</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal7">Add New Record</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Records:</h3>
-
-            <div class="records_content7"></div>
-        </div>
-    </div>
-</div>
-<!-- /Content Section -->
-
-
-<!-- Bootstrap Modals -->
-<!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
-            </div>
-            <div class="modal-body">
-			
-			
-			
-
-                <div class="form-group">
-                    <label for="team_m_id">ID</label>
-                    <input type="text" id="team_m_id" placeholder="ID" class="form-control"/>
-                </div>
-				
-				<div class="form-group">
-                    <label for="team_m_first_name">team_m_first_name</label>
-                    <input type="text" id="team_m_first_name" placeholder="team_m_first_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="team_m_last_name">team_m_last_name</label>
-                    <input type="text" id="team_m_last_name" placeholder="team_m_last_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="team_m_position">team_m_position</label>
-                    <input type="text" id="team_m_position" placeholder="team_m_position" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_m_employement_status">team_m_employement_status</label>
-                    <input type="text" id="team_m_employement_status" placeholder="team_m_employement_status" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_id">team_id</label>
-                    <input type="text" id="team_id" placeholder="team_id" class="form-control"/>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="addRecordTeam_Members()">Add Record</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // Modal -->
-
-<!-- Modal - Update User details -->
-<div class="modal fade" id="update_team_members_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <label for="team_m_first_name">team_m_first_name</label>
-                    <input type="text" id="update_team_m_first_name" placeholder="team_m_first_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="team_m_last_name">team_m_last_name</label>
-                    <input type="text" id="update_team_m_last_name" placeholder="team_m_last_name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="team_m_position">team_m_position</label>
-                    <input type="text" id="update_team_m_position" placeholder="team_m_position" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_m_employement_status">team_m_employement_status</label>
-                    <input type="text" id="update_team_m_employement_status" placeholder="team_m_employement_status" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_id">team_id</label>
-                    <input type="text" id="update_team_id" placeholder="team_id" class="form-control"/>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateTeam_MembersDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_team_members_id">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Content Section -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>TEAM TABLE DATA</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            <div class="pull-right">
-                <button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal10">Add New Record</button>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <h3>Records:</h3>
-
-            <div class="records_content10"></div>
-        </div>
-    </div>
-</div>
-<!-- /Content Section -->
-
-
-<!-- Bootstrap Modals -->
-<!-- Modal - Add New Record/User -->
-<div class="modal fade" id="add_new_record_modal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add New Record</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <label for="team_id">Team ID</label>
-                    <input type="text" id="team_id" placeholder="team_id" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_name">team_name</label>
-                    <input type="text" id="team_name" placeholder="team_name" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_lead">team_lead</label>
-                    <input type="text" id="team_lead" placeholder="team_lead" class="form-control"/>
-                </div>
-
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="addRecordTeam()">Add Record</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // Modal -->
-
-<!-- Modal - Update User details -->
-<div class="modal fade" id="update_team_modal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
-            </div>
-            <div class="modal-body">
-
-                     
-				<div class="form-group">
-                    <label for="team_name">team_name</label>
-                    <input type="text" id="update_team_name" placeholder="team_name" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="team_lead">team_lead</label>
-                    <input type="text" id="update_team_lead" placeholder="team_lead" class="form-control"/>
-                </div>
-
-               
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateTeamDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_team_id">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Content Section -->
-
-
-
-
-          
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
+    <div class="pad margin no-print">
+      <div class="callout callout-info" style="margin-bottom: 0!important;">
+        <h4><i class="fa fa-info"></i> Note:</h4>
+        This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
       </div>
-      <!-- /.row -->
+    </div>
+
+    <!-- Main content -->
+    <section class="invoice">
+       <p><img alt="" src="http://localhost/sales-management/INVOICE.png" style="height:110px; width:720px" /></p>
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="height:200px; width:720px">
+	<tbody>
+		<tr>
+			<td style="width:360px; text-align:center;">
+			<p> <strong> INVOICE TO</strong></p>
+
+			<p> <?php echo ${"company_name1"}; ?></p>
+			
+			<p> <?php echo ${"company_address1"}; ?></p>
+			</td>
+			<td style="height:100px; text-align:justify; vertical-align:middle; white-space:nowrap">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" style="height:100px; width:375px">
+				<tbody>
+					<tr>
+						<td style="width:180px; text-align:center;"><strong>INVOICE NO.</strong></td>
+						<td style="width:180px; text-align:center;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="width:180px; text-align:center;"><strong>INVOICE DATE.</strong></td>
+						<td style="width:180px; text-align:center;"><?php echo date("d/m/Y"); ?></td>
+					</tr>
+					<tr>
+						<td style="width:180px; text-align:center;"><strong>PO No.</strong></td>
+						<td style="width:180px; text-align:center;">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="white-space:nowrap; width:360px"></td>
+			<td style="width:360px; text-align:center;">
+			<p><strong> TOTAL AMOUNT</strong></p>
+
+			<p><?php echo $total +($total * 0.16)?></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="width:720px">
+	<tbody>
+		<tr>
+			<td style="height:50px; text-align:center; vertical-align:middle; white-space:nowrap; width:360px" align="center"><strong>Item Description</strong></td>
+			<td style="text-align:center; vertical-align:middle; white-space:nowrap; width:120px" align="center"> <strong>Unite Prise</strong></td>
+			<td style="text-align:center; vertical-align:middle; white-space:nowrap; width:120px" align="center"> <strong>Qty</strong></td>
+			<td align="center"><strong>Total</strong></td>
+		</tr>
+		<?php
+		
+		$data = "";
+		for ($x = 1; $x < $number; $x++){
+		
+		$data .='<tr>
+			
+				<td align="center">'. ${"project_name$x"} . '</td>
+			     <td align="center">'. ${"project_price$x"} . '</td>
+				 <td align="center"> 1 </td>
+				 <td align="center">'. ${"project_price$x"} . '</td>
+				 
+				
+				
+    		</tr>';
+			
+		}
+		echo $data;
+		
+		?>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:720px;">
+	<tbody>
+		<tr>
+			<td style="background-color:black; width:180px; text-align:center;"> <strong><font color="white">PIN No.</font></strong></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white">Po...................</font></td>
+			<td style="background-color:black; width:180px; text-align:center;"><strong><font color="white">Subtotal</font></strong></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white"><?php echo $total ?></font></td>
+		</tr>
+		<tr>
+			<td style="background-color:black; width:180px; text-align:center;"> <strong><font color="white">Served By:</font></strong></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white">Bhavya barot</font></td>
+			<td style="background-color:black; width:180px; text-align:center;"> <strong><font color="white">TAX: VAT 16%</font></strong></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white"><?php echo $total * 0.16 ?></font></td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:720px">
+	<tbody>
+		<tr>
+			<td style="background-color:black; width:180px; text-align:center;"><strong><font color="white">MOBILE</font></strong></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white">8054565454</font></td>
+			<td style="background-color:black; width:180px; text-align:center;"> <strong><font color="white">GRAND TOTAL</font></strong></td>
+<td style="background-color:black; width:180px; text-align:center;"><font color="white"><?php echo $total +($total * 0.16)?></font></td>
+		</tr>
+		<tr>
+			<td style="background-color:black; width:180px; text-align:center;"><strong><font color="white">EMAIL</font></strong></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white">abc@biocart.io</font></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white"></font></td>
+			<td style="background-color:black; width:180px; text-align:center;"><font color="white"></font></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<hr />
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> &nbsp;Sign&amp;Omcal Stamp</strong></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<hr />
+<p>&nbsp;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong> THANK YOU</strong></p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;we really appreciate your business</p>
+
+<hr />
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<hr />
+<p>&nbsp;</p>
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <a href="invoice-print.php" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+          <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+          </button>
+          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <i class="fa fa-download"></i> Generate PDF
+          </button>
+        </div>
+      </div>
     </section>
     <!-- /.content -->
+    <div class="clearfix"></div>
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  <footer class="main-footer no-print">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.6
     </div>
@@ -1113,30 +985,15 @@
 </div>
 <!-- ./wrapper -->
 
-
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <script src="../../plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
-</script>
 </body>
 </html>
