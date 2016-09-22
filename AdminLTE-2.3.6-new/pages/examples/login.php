@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 $dbusername ="null";
@@ -21,24 +23,27 @@ if($username && $password)
 	 
 	if($dbusername == $username && $dbpassword == $password && $dbtype == "admin")
 	{
-		
-		header("Location: ../../index.html");
+		$count++;
+		header("Location: ../../index.php");
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "sales")
-	{
-		header("Location: ../../../AdminLTE-2.3.6-new-sales/index.html");
+	{	$count++;
+		header("Location: ../../../AdminLTE-2.3.6-new-sales/index.php?count=".$count);
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "project_manager")
-	{
-		header("Location: ../../../AdminLTE-2.3.6-new -prom/pages/tables/data.php?user_id=".$user_id);
+	{	$count++;
+		header("Location: ../../../AdminLTE-2.3.6-new -prom/index.php?user_id=$user_id&count=$count");
 	}
 	elseif($dbusername == $username && $dbpassword == $password && $dbtype == "company")
-	{
-		header("Location: ../../../AdminLTE-2.3.6-new -company/pages/tables/data.php?user_id=".$user_id);
+	{	$count++;
+		header("Location: ../../../AdminLTE-2.3.6-new -company/index.php?user_id=$user_id&count=$count");
 	}
 	else
 	{
-		header("Location: ../../indeex.php");
+		$Message = urlencode("Invelid Username Or Password! plz try again");
+header("Location: login_sandy.php?Message=".$Message);
+die;
+		
 	}
 }
 
