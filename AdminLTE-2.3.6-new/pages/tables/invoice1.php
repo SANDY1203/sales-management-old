@@ -52,6 +52,11 @@ include("ajax/db_connection.php");
 
 $number = 1;
 $total = 0;
+foreach($_POST['checkboxName'] as $value){
+	
+	
+	
+}
 
     foreach($_POST['checkboxName'] as $value)
 {

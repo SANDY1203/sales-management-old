@@ -11,8 +11,8 @@
                       <th>email</th>
 					  <th>password</th>
 					  <th>role</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>Action</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM users";
@@ -35,9 +35,9 @@
                 <td>'. $row['password'] . '</td>
 				<td>'. $row['role'] . '</td>
 				<td>
+					<button onclick="ViewUser('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetUserDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
 					<button onclick="DeleteUser('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

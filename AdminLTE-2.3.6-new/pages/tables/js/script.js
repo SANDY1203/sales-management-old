@@ -56,6 +56,22 @@ function DeleteUser(id) {
         );
     }
 }
+function DeleteUser1() {
+    var conf = confirm("Are you sure, do you really want to delete User?");
+    if (conf == true) {
+		var id = $("#hidden_delete_user_id").val();
+		
+        $.post("ajax/deleteUser.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_user_modal").modal("hide");
+                readRecords();
+            }
+        );
+    }
+}
 
 
 function GetUserDetails(id) {
@@ -79,6 +95,28 @@ function GetUserDetails(id) {
     $("#update_user_modal").modal("show");
 }
 
+function ViewUser(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_user_id").val(id);
+    $.post("ajax/readUserDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id").val(user.id);
+            $("#view_first_name").val(user.first_name);
+            $("#view_last_name").val(user.last_name);
+            $("#view_email").val(user.email);
+            $("#view_password").val(user.password);
+            $("#view_role").val(user.role);
+        }
+    );
+    // Open modal popup
+    $("#view_user_modal").modal("show");
+}
 
 function UpdateUserDetails() {
     // get values
@@ -1429,7 +1467,22 @@ $(document).ready(function () {
 
 
 
+$scope.one = true; // setting the first div visible when the page loads
+$scope.two = false; // hidden
+$scope.three = false; // hidden
 
+// Now have three functions that change the ng-show based on the click
+$scope.showOne = function (){
+  $scope.one = true;
+  $scope.two = false;
+  $scope.three = false;
+}
+
+$scope.showTwo = function (){
+  $scope.one = false;
+  $scope.two = true; // now show this one
+  $scope.three = false;
+}
 
 
 

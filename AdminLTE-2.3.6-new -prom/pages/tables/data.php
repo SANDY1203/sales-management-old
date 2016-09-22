@@ -531,13 +531,7 @@
         <li class="active">Data tables</li>
       </ol>
     </section>
-<div id="dom-target123" style="display: none;">
-    <?php 
-        if($_GET){
-        $user_id = $_GET['user_id'];}//Again, do some operation, get the output.
-        echo htmlspecialchars($user_id); /* You have to escape because the result
-                                           will not be valid HTML otherwise. */
-    ?>
+
   
 <div class="container">
     <div class="row">
@@ -562,7 +556,13 @@
 </div>
 <!-- /Content Section -->
 
-
+<div id="dom-target123" style="display: none;">
+    <?php 
+        if($_GET){
+        $user_id = $_GET['user_id'];}//Again, do some operation, get the output.
+        echo htmlspecialchars($user_id); /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
+    ?>
 </div>
 <input type="hidden" name="mainuserid123" id="mainuserid123" value="<?php echo $user_id; ?>" />
 <!-- Bootstrap Modals -->
