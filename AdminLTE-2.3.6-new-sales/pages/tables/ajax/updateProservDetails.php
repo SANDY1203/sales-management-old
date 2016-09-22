@@ -12,10 +12,10 @@ if(isset($_POST))
 		$product_start_price = $_POST['product_start_price'];
         $product_end_price = $_POST['product_end_price'];
         $category = $_POST['category'];
-	
+		
 
     // Updaste User details
-    $query = "UPDATE proserv SET product_name = '$product_name', product_description = '$product_description', product_start_price = '$product_start_price', product_end_price = '$product_end_price', category = '$category' WHERE id = 'id'";
+    $query = "UPDATE proserv SET product_name = '$product_name', product_description = '$product_description', product_start_price = '$product_start_price', product_end_price = '$product_end_price', category='$category' WHERE id = 'id'";
     if (!$result = mysql_query($query)) {
         exit(mysql_error());
     }

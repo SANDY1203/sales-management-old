@@ -19,11 +19,29 @@
 		$project_status = $_POST['project_status'];
 		$user_id = $_POST['user_id'];
 		
+		$query = mysql_query("SELECT * FROM users WHERE id = '$user_id' ");
+
+   // fetch the result / convert resulte in to array 
+
+   WHILE ($rows = mysql_fetch_array($query)):
+
+      $role = $rows['role'];
+     
+
+      
+	  if($role == 'project_manager'){
+	  
+
+      
+		
 
 		$query = "INSERT INTO projects(id,project_name,project_desc,project_company_id,project_price,project_team,project_status,user_id) VALUES('$id', '$project_name', '$project_desc', '$project_company_id', '$project_price', '$project_team', '$project_status', '$user_id')";
 		if (!$result = mysql_query($query)) {
 	        exit(mysql_error());
 	    }
 	    echo "1 Record Added!";
+	
+	}
+	endwhile;
 	}
 ?>

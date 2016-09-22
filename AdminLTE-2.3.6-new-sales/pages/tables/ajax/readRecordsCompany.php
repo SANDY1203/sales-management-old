@@ -5,14 +5,14 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>company_id</th>
-					  <th>company_name</th>
-                      <th>company_address</th>
-                      <th>company_phone</th>
-					  <th>company_email</th>
-					  <th>user_id</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>Company ID</th>
+					  <th>Company Name</th>
+                      <th>Company Address</th>
+                      <th>Company Phone</th>
+					  <th>Company Email</th>
+					  <th>User Id</th>
+							<th>Actions</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM company";
@@ -35,9 +35,10 @@
                 <td>'. $row['company_email'] . '</td>
 				<td>'. $row['user_id'] . '</td>
 				<td>
+				<button onclick="ViewCompany('.$row['company_id'].')" class="btn btn-info">View</button>
 					<button onclick="GetCompanyDetails('.$row['company_id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
+				
 					<button onclick="DeleteCompany('.$row['company_id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

@@ -5,15 +5,15 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>proserv_id</th>
-                      <th>project_contractor_id</th>
-                      <th>project_price</th>
-					  <th>project_team</th>
-					  <th>project_status</th>
-					  <th>category_proserv_project</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>ID</th>
+					  <th>Proserv ID</th>
+                      <th>Project Contractor ID</th>
+                      <th>Project Price</th>
+					  <th>Project Team</th>
+					  <th>Project Status</th>
+					  <th>Category Proserv Project</th>
+							<th>Actions</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM proserv_project";
@@ -38,9 +38,9 @@
 				 <td>'. $row['category_proserv_project'] . '</td>
                 
 				<td>
+				<button onclick="ViewProserv_Project('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetProserv_ProjectDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
 					<button onclick="DeleteProserv_Project('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

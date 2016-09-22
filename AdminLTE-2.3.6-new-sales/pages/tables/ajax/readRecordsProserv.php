@@ -5,14 +5,14 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>product_name</th>
-                      <th>product_description</th>
-                      <th>product_start_price</th>
-					  <th>product_end_price</th>
-					  <th>category</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>ID</th>
+					  <th>Product Name</th>
+                      <th>Product Description</th>
+                      <th>Product Start Price</th>
+					  <th>Product End Price</th>
+					  <th>Category</th>
+							<th>Actions</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM proserv";
@@ -35,9 +35,9 @@
                 <td>'. $row['product_end_price'] . '</td>
 				<td>'. $row['category'] . '</td>
 				<td>
+				<button onclick="ViewProserv('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetProservDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
 					<button onclick="DeleteProserv('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';
