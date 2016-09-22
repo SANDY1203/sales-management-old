@@ -869,7 +869,7 @@ function addRecordProserv() {
 
     }, function (data, status) {
         // close the popup
-        $("#add_new_record_modal9").modal("hide");
+        $("#add_new_record_modal222").modal("hide");
 
         // read records again
         readRecordsProserv();
@@ -944,7 +944,7 @@ function GetProservDetails(id) {
         }
     );
     // Open modal popup
-    $("#update_proserv_modal9").modal("show");
+    $("#update_proserv_modal222").modal("show");
 }
 
 function ViewProserv(id) {
@@ -995,7 +995,7 @@ function UpdateProservDetails() {
         },
         function (data, status) {
             // hide modal popup
-            $("#update_proserv_modal9").modal("hide");
+            $("#update_proserv_modal222").modal("hide");
             // reload contact by using readRecords();
             readRecordsProserv();
         }
@@ -1106,7 +1106,7 @@ function GetProserv_ProjectDetails(id) {
             // PARSE json data
             var user = JSON.parse(data);
             // Assing existing values to the modal popup fields
-            $("#update_proserv_id").val(user.proserv_id);
+            $("#update_proserv_id1").val(user.proserv_id);
             $("#update_project_contractor_id").val(user.project_contractor_id);
             $("#update_project_price1").val(user.project_price);
             $("#update_project_team1").val(user.project_team);
@@ -1131,9 +1131,9 @@ function ViewProserv_Project(id) {
             // Assing existing values to the modal popup fields
 
             $("#view_id25").val(user.id);
-            $("#view_proserv_id").val(user.proserv_id);
+            $("#view_proserv_id1").val(user.proserv_id);
             $("#view_project_contractor_id").val(user.project_contractor_id);
-            $("#view_project_price").val(user.project_price);
+            $("#view_project_price1").val(user.project_price);
             $("#view_project_team1").val(user.project_team);
             $("#view_project_status1").val(user.project_status);
             $("#view_category_proserv_project").val(user.category_proserv_project);
@@ -1147,7 +1147,7 @@ function ViewProserv_Project(id) {
 
 function UpdateProserv_ProjectDetails() {
     // get values
-    var proserv_id = $("#update_proserv_id").val();
+    var proserv_id = $("#update_proserv_id1").val();
     var project_contractor_id = $("#update_project_contractor_id").val();
     var project_price = $("#update_project_price1").val();
     var project_team = $("#update_project_team1").val();
@@ -1347,7 +1347,7 @@ function addRecordTeam() {
 
     }, function (data, status) {
         // close the popup
-        $("#add_new_record_modal10").modal("hide");
+        $("#add_new_record_modal1080").modal("hide");
 
         // read records again
         readRecordsTeam();

@@ -227,7 +227,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Add New Record</button>
+			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal7">Add New Record</button>
 
 			  <div class="col-md-9">
 			                <h1 class="box-title"><b>TEAM MEMBERS</b></h1>

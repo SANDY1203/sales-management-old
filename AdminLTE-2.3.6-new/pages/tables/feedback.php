@@ -168,7 +168,7 @@
         </li>
 		<li class="treeview">
           <a href="question.php">
-            <i class="fa fa-table"></i> <span>Question</span>
+            <i class="fa fa-table"></i> <span>QUESTION</span>
             
           </a>
           
@@ -227,7 +227,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">Add New Record</button>
+			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal2">Add New Record</button>
 
 			  <div class="col-md-9">
 			                <h1 class="box-title"><b>FEEDBACK</b></h1>
@@ -298,6 +298,63 @@
         </div>
     </div>
 </div>
+<!-- Modal - Update User details -->
+<div class="modal fade" id="update_feedback_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Update</h4>
+            </div>
+            <div class="modal-body">
+
+                     
+				<div class="form-group">
+                    <label for="user_id">user_id</label>
+                    <input type="text" id="update_user_id1" placeholder="user_id" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="ans_1">ans_1</label>
+                    <input type="text" id="update_ans_1" placeholder="ans_1" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="ans_2">ans_2</label>
+                    <input type="text" id="update_ans_2" placeholder="ans_2" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="ans_3">ans_3</label>
+                    <input type="text" id="update_ans_3" placeholder="ans_3" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="ans_4">ans_4</label>
+                    <input type="text" id="update_ans_4" placeholder="ans_4" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="ans_5">ans_5</label>
+                    <input type="text" id="update_ans_5" placeholder="ans_5" class="form-control"/>
+                </div>
+
+                
+				<div class="form-group">
+                    <label for="remarks">remarks</label>
+                    <input type="text" id="update_remarks" placeholder="remarks" class="form-control"/>
+                </div>
+				<div class="form-group">
+                    <label for="contact_id">contact_id</label>
+                    <input type="text" id="update_contact_id" placeholder="contact_id" class="form-control"/>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="UpdateFeedbackDetails()" >Save Changes</button>
+                <input type="hidden" id="hidden_feedback_id">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- // Modal -->
           </div>
           <!-- /.box -->
