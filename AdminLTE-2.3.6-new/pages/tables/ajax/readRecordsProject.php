@@ -69,16 +69,16 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>project_name</th>
-                      <th>project_desc</th>
-                      <th>project_company_id</th>
-					  <th>project_price</th>
-					  <th>project_team</th>
-					  <th>project_status</th>
-					  <th>user_id</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>ID</th>
+					  <th>Project Name</th>
+                      <th>Project Desc</th>
+                      <th>Project Company ID</th>
+					  <th>Project Price</th>
+					  <th>Project Team</th>
+					  <th>Project Status</th>
+					  <th>User ID</th>
+							<th>Actions</th>
+					
 						</tr>';
 
 	$query = "SELECT * FROM projects";
@@ -105,8 +105,7 @@
 				
 				<td>
 					<button onclick="GetProjectDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+			
 					<button onclick="DeleteProject('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

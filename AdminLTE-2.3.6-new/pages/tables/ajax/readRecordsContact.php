@@ -5,16 +5,16 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>name</th>
-                      <th>position</th>
-                      <th>number_one</th>
-					  <th>number_two</th>
-					  <th>email_one</th>
-					  <th>email_two</th>
-					  <th>c_a</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>ID</th>
+					  <th>Name</th>
+                      <th>Position</th>
+                      <th>Nmuber-1</th>
+					  <th>Number-2</th>
+					  <th>Email-1</th>
+					  <th>Email-2</th>
+					  <th>Company Allocation</th>
+							<th>Actions</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM contact";
@@ -40,8 +40,7 @@
 				<td>'. $row['contact_company_allo'] . '</td>
 				<td>
 					<button onclick="GetContactDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
 					<button onclick="DeleteContact('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

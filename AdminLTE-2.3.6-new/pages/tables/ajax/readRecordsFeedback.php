@@ -5,17 +5,17 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>user_id</th>
-                      <th>ans_1</th>
-                      <th>ans_2</th>
-					  <th>ans_3</th>
-					  <th>ans_4</th>
-					  <th>ans_5</th>
-					  <th>remarks</th>
-					  <th>contact_id</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>ID</th>
+					  <th>User ID</th>
+                      <th>Ans-1</th>
+                      <th>Ans-2</th>
+					  <th>Ans-3</th>
+					  <th>Ans-4</th>
+					  <th>Ans-5</th>
+					  <th>Remarks</th>
+					  <th>Contact ID</th>
+							<th>Actions</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM feedback";
@@ -42,8 +42,7 @@
 				<td>'. $row['contact_id'] . '</td>
 				<td>
 					<button onclick="GetFeedbackDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
 					<button onclick="DeleteFeedback('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

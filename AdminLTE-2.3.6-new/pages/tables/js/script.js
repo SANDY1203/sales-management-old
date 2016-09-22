@@ -210,6 +210,23 @@ function DeleteCompany(company_id) {
     }
 }
 
+function DeleteCompany1() {
+    var conf = confirm("Are you sure, do you really want to delete User?");
+    if (conf == true) {
+		var id = $("#hidden_delete_company_id").val();
+		
+        $.post("ajax/deleteCompany.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_company_modal").modal("hide");
+                readRecordsCompany();
+            }
+        );
+    }
+}
+
 function GetCompanyDetails(company_id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_company_id").val(company_id);
@@ -229,6 +246,29 @@ function GetCompanyDetails(company_id) {
     );
     // Open modal popup
     $("#update_company_modal").modal("show");
+}
+
+function ViewCompany(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_company_id").val(id);
+    $.post("ajax/readUserDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_company_id").val(user.company_id);
+            $("#view_company_name").val(user.company_name);
+            $("#view_company_address").val(user.company_address);
+            $("#view_company_phone").val(user.company_phone);
+            $("#view_company_email").val(user.company_email);
+            $("#view_user_id").val(user.user_id);
+        }
+    );
+    // Open modal popup
+    $("#view_company_modal").modal("show");
 }
 
 function UpdateCompanyDetails() {
@@ -333,6 +373,23 @@ function DeleteContact(id) {
     }
 }
 
+function DeleteContact1() {
+    var conf = confirm("Are you sure, do you really want to delete User?");
+    if (conf == true) {
+		var id = $("#hidden_delete_contact_id").val();
+		
+        $.post("ajax/deleteContact.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_contact_modal").modal("hide");
+                readRecordsContact();
+            }
+        );
+    }
+}
+
 function GetContactDetails(id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_contact_id").val(id);
@@ -354,6 +411,31 @@ function GetContactDetails(id) {
     );
     // Open modal popup
     $("#update_contact_modal").modal("show");
+}
+
+function ViewContact(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_contact_id").val(id);
+    $.post("ajax/readContactDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id21").val(user.id21);
+            $("#view_contact_name").val(user.contact_name);
+            $("#view_contact_position").val(user.contact_position);
+            $("#view_contact_number_one").val(user.contact_number_one);
+            $("#view_contact_number_two").val(user.contact_number_two);
+            $("#view_contact_email_one").val(user.contact_email_one);
+            $("#view_contact_email_two").val(user.contact_email_two);
+            $("#view_contact_company_allo").val(user.contact_company_allo);
+        }
+    );
+    // Open modal popup
+    $("#view_contact_modal").modal("show");
 }
 
 function UpdateContactDetails() {
@@ -463,6 +545,23 @@ function DeleteFeedback(id) {
     }
 }
 
+function DeleteFeedback1() {
+    var conf = confirm("Are you sure, do you really want to delete User?");
+    if (conf == true) {
+		var id = $("#hidden_delete_feedback_id").val();
+		
+        $.post("ajax/deleteFeedback.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_feedback_modal").modal("hide");
+                readRecordsFeedback();
+            }
+        );
+    }
+}
+
 function GetFeedbackDetails(id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_feedback_id").val(id);
@@ -486,6 +585,33 @@ function GetFeedbackDetails(id) {
     // Open modal popup
     $("#update_feedback_modal").modal("show");
 }
+
+function ViewFeedback(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_feedback_id").val(id);
+    $.post("ajax/readFeedbackDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id22").val(user.id22);
+            $("#view_user_id1").val(user.user_id1);
+            $("#view_ans_1").val(user.ans_1);
+            $("#view_ans_2").val(user.ans_2);
+            $("#view_ans_3").val(user.ans_3);
+            $("#view_ans_4").val(user.ans_4);
+            $("#view_ans_5").val(user.ans_5);
+            $("#view_remarks").val(user.remarks);
+            $("#view_contact_id").val(user.contact_id);
+        }
+    );
+    // Open modal popup
+    $("#view_feedback_modal").modal("show");
+}
+
 
 function UpdateFeedbackDetails() {
     // get values
@@ -607,6 +733,23 @@ function DeleteProject(id) {
     }
 }
 
+function DeleteProject1() {
+    var conf = confirm("Are you sure, do you really want to delete Project?");
+    if (conf == true) {
+		var id = $("#hidden_delete_project_id").val();
+		
+        $.post("ajax/deleteProject.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_project_modal").modal("hide");
+                readRecordsProject();
+            }
+        );
+    }
+}
+
 
 
 function GetProjectDetails(id) {
@@ -630,6 +773,32 @@ function GetProjectDetails(id) {
     );
     // Open modal popup
     $("#update_project_modal").modal("show");
+}
+
+function ViewProject(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_project_id").val(id);
+    $.post("ajax/readProjectDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id23").val(user.id23);
+            $("#view_project_name").val(user.project_name);
+            $("#view_project_desc").val(user.project_desc);
+            $("#view_project_company_id").val(user.project_company_id);
+            $("#view_project_price").val(user.project_price);
+            $("#view_project_team").val(user.project_team);
+            $("#view_project_status").val(user.project_status);
+            $("#view_user_id2").val(user.user_id);
+  
+        }
+    );
+    // Open modal popup
+    $("#view_project_modal").modal("show");
 }
 
 function UpdateProjectDetails() {
@@ -719,7 +888,7 @@ function addRecordProserv() {
 // READ records
 function readRecordsProserv() {
     $.get("ajax/readRecordsProserv.php", {}, function (data, status) {
-        $(".records_content9").html(data);
+        $(".records_content119").html(data);
     });
 }
 
@@ -732,6 +901,24 @@ function DeleteProserv(id) {
             },
             function (data, status) {
                 // reload Contact by using readRecords();
+                readRecordsProserv();
+            }
+        );
+    }
+}
+
+
+function DeleteProserv1() {
+    var conf = confirm("Are you sure, do you really want to delete Proserv?");
+    if (conf == true) {
+		var id = $("#hidden_delete_proserv_id").val();
+		
+        $.post("ajax/deleteProserv.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_proserv_modal").modal("hide");
                 readRecordsProserv();
             }
         );
@@ -758,6 +945,31 @@ function GetProservDetails(id) {
     );
     // Open modal popup
     $("#update_proserv_modal9").modal("show");
+}
+
+function ViewProserv(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_proserv_id").val(id);
+    $.post("ajax/readProservDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id24").val(user.id24);
+            $("#view_product_name").val(user.product_name);
+            $("#view_product_description").val(user.product_description);
+            $("#view_product_start_price").val(user.product_start_price);
+            $("#view_product_end_price").val(user.product_end_price);
+            $("#view_category").val(user.category);
+  
+  
+        }
+    );
+    // Open modal popup
+    $("#view_proserv_modal").modal("show");
 }
 
 function UpdateProservDetails() {
@@ -867,6 +1079,23 @@ function DeleteProserv_Project(id) {
     }
 }
 
+function DeleteProserv_Project1() {
+    var conf = confirm("Are you sure, do you really want to delete Proserv_Project?");
+    if (conf == true) {
+		var id = $("#hidden_delete_proserv_project_id").val();
+		
+        $.post("ajax/deleteProserv_Project.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_proserv_project_modal").modal("hide");
+                readRecordsProserv_Project();
+            }
+        );
+    }
+}
+
 function GetProserv_ProjectDetails(id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_proserv_project_id").val(id);
@@ -888,6 +1117,32 @@ function GetProserv_ProjectDetails(id) {
     );
     // Open modal popup
     $("#update_proserv_project_modal").modal("show");
+}
+
+function ViewProserv_Project(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_proserv_project_id").val(id);
+    $.post("ajax/readProserv_ProjectDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id25").val(user.id);
+            $("#view_proserv_id").val(user.proserv_id);
+            $("#view_project_contractor_id").val(user.project_contractor_id);
+            $("#view_project_price").val(user.project_price);
+            $("#view_project_team1").val(user.project_team);
+            $("#view_project_status1").val(user.project_status);
+            $("#view_category_proserv_project").val(user.category_proserv_project);
+  
+  
+        }
+    );
+    // Open modal popup
+    $("#view_proserv_project_modal").modal("show");
 }
 
 function UpdateProserv_ProjectDetails() {
@@ -984,6 +1239,23 @@ function DeleteQuestions(id) {
     }
 }
 
+function DeleteQuestions1() {
+    var conf = confirm("Are you sure, do you really want to delete User?");
+    if (conf == true) {
+		var id = $("#hidden_delete_question_id").val();
+		
+        $.post("ajax/deleteQuestions.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_questions_modal").modal("hide");
+                readRecordsQuestions();
+            }
+        );
+    }
+}
+
 function GetQuestionsDetails(id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_question_id").val(id);
@@ -1001,6 +1273,26 @@ function GetQuestionsDetails(id) {
     );
     // Open modal popup
     $("#update_question_modal").modal("show");
+}
+
+function ViewQuestions(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_question_id").val(id);
+    $.post("ajax/readQuestionsDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_id26").val(user.id26);
+            $("#view_question").val(user.question);
+        
+        }
+    );
+    // Open modal popup
+    $("#view_question_modal").modal("show");
 }
 
 function UpdateQuestionsDetails() {
@@ -1091,6 +1383,23 @@ function DeleteTeam(team_id) {
     }
 }
 
+function DeleteTeam1() {
+    var conf = confirm("Are you sure, do you really want to delete Team?");
+    if (conf == true) {
+		var id = $("#hidden_delete_team_id").val();
+		
+        $.post("ajax/deleteTeam.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_team_modal").modal("hide");
+                readRecordsTeam();
+            }
+        );
+    }
+}
+
 function GetTeamDetails(team_id) {
     // Add User ID to the hidden field for furture usage
     $("#hidden_team_id").val(team_id);
@@ -1110,6 +1419,27 @@ function GetTeamDetails(team_id) {
     );
     // Open modal popup
     $("#update_team_modal10").modal("show");
+}
+
+function ViewTeam(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_team_id").val(id);
+    $.post("ajax/readTeamDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_team_id").val(user.team_id);
+            $("#view_team_name").val(user.team_name);
+            $("#view_team_lead").val(user.team_lead);
+        
+        }
+    );
+    // Open modal popup
+    $("#view_team_modal").modal("show");
 }
 
 function UpdateTeamDetails() {
@@ -1211,6 +1541,23 @@ function DeleteTeam_Members(team_m_id) {
         );
     }
 }
+function DeleteTeam_Members1() {
+    var conf = confirm("Are you sure, do you really want to delete Team MEMBERS?");
+    if (conf == true) {
+		var id = $("#hidden_delete_team_members_id").val();
+		
+        $.post("ajax/deleteTeam_Members.php", {
+                id: id
+            },
+            function (data, status) {
+                // reload Users by using readRecords();
+				$("#view_team_members_modal").modal("hide");
+                readRecordsTeam_Members();
+            }
+        );
+    }
+}
+
 
 function GetTeam_MembersDetails(team_m_id) {
     // Add User ID to the hidden field for furture usage
@@ -1236,6 +1583,29 @@ function GetTeam_MembersDetails(team_m_id) {
     $("#update_team_members_modal").modal("show");
 }
 
+function ViewTeam_Members(id) {
+    // Add User ID to the hidden field for furture usage
+    $("#hidden_delete_team_members_id").val(id);
+    $.post("ajax/readTeam_MembersDetails.php", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var user = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+
+            $("#view_team_m_id").val(user.team_m_id);
+            $("#view_team_m_first_name").val(user.team_m_first_name);
+            $("#view_team_m_last_name").val(user.team_m_last_name);
+            $("#view_team_m_position").val(user.team_m_position);
+            $("#view_team_m_employement_status").val(user.team_m_employement_status);
+            $("#view_team_id").val(user.team_id);
+        
+        }
+    );
+    // Open modal popup
+    $("#view_team_members_modal").modal("show");
+}
 
 
 function UpdateTeam_MembersDetails() {

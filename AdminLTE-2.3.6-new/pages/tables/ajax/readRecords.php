@@ -5,13 +5,13 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>first_name</th>
-                      <th>last_name</th>
-                      <th>email</th>
-					  <th>password</th>
-					  <th>role</th>
-							<th>Action</th>
+							<th>ID</th>
+					  <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+					  <th>Password</th>
+					  <th>Role</th>
+							<th>Actions</th>
 							
 						</tr>';
 

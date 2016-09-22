@@ -168,7 +168,7 @@
         </li>
 		<li class="treeview">
           <a href="question.php">
-            <i class="fa fa-table"></i> <span>Question</span>
+            <i class="fa fa-table"></i> <span>QUESTION</span>
             
           </a>
           

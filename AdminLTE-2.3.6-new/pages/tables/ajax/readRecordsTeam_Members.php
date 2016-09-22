@@ -5,14 +5,15 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>team_m_id</th>
-					  <th>team_m_first_name</th>
-                      <th>team_m_last_name</th>
-                      <th>team_m_position</th>
-					  <th>team_m_employement_status</th>
-					  <th>team_id</th>
-							<th>Update</th>
-							<th>Delete</th>
+							<th>Team M ID</th>
+					  <th>Team M First Name</th>
+                      <th>Team M Last Name</th>
+                      <th>Team M Position</th>
+					  <th>Team M Employement Status</th>
+					  <th>Team ID</th>
+							<th>Actions</th>
+							
+							
 						</tr>';
 
 	$query = "SELECT * FROM team_members";
@@ -36,8 +37,7 @@
 				<td>'. $row['team_id'] . '</td>
 				<td>
 					<button onclick="GetTeam_MembersDetails('.$row['team_m_id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+			
 					<button onclick="DeleteTeam_Members('.$row['team_m_id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';

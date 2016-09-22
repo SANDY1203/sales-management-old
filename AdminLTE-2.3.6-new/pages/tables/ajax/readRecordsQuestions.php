@@ -5,11 +5,11 @@
 	// Design initial table header 
 	$data = '<table class="table table-bordered table-striped">
 						<tr>
-							<th>id</th>
-					  <th>question</th>
+							<th>ID</th>
+					  <th>Question</th>
                       
-							<th>Update</th>
-							<th>Delete</th>
+							<th>Actions</th>
+						
 						</tr>';
 
 	$query = "SELECT * FROM questions";
@@ -30,8 +30,7 @@
 
 				<td>
 				 <button onclick="GetQuestionsDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
+				
 				 <button onclick="DeleteQuestions('.$row['id'].')" class="btn btn-danger">Delete</button>
 				</td>
     		</tr>';
