@@ -14,10 +14,28 @@ if(isset($_POST))
         $project_team = $_POST['project_team'];
 		$project_status = $_POST['project_status'];
 		$user_id = $_POST['user_id'];
+		
+		$query = mysql_query("SELECT * FROM users WHERE id = '$user_id' ");
+
+   // fetch the result / convert resulte in to array 
+
+   WHILE ($rows = mysql_fetch_array($query)):
+
+      $role = $rows['role'];
+     
+
+      
+	  if($role == 'project_manager'){
+	  
+		
+	
 
     // Updaste User details
     $query = "UPDATE projects SET project_name = '$project_name', project_desc = '$project_desc', project_price = '$project_price', project_team = '$project_team', project_status = '$project_status', user_id = '$user_id', project_company_id='$project_company_id' WHERE id = '$id'";
     if (!$result = mysql_query($query)) {
         exit(mysql_error());
     }
-}
+	  }
+endwhile;
+	}
+?>
