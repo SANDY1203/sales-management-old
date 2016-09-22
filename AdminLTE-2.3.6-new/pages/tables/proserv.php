@@ -273,8 +273,10 @@
                 </div>
 				<div class="form-group">
                     <label for="category">category</label>
-                    <input type="text" id="category" placeholder="category" class="form-control"/>
-                </div>
+                    <select class="selectpicker" id="category">
+  <option>service</option>
+  <option>product</option>
+  </select></div>
 				
 
             </div>
@@ -317,8 +319,10 @@
                 </div>
 				<div class="form-group">
                     <label for="ans_4">category</label>
-                    <input type="text" id="update_category" placeholder="category" class="form-control"/>
-                </div>
+                    <select class="selectpicker" id="update_category">
+  <option>service</option>
+  <option>product</option>
+  </select></div>
 				
 
             </div>

@@ -274,12 +274,32 @@
                 </div>
 				<div class="form-group">
                     <label for="project_status">project_status</label>
-                    <input type="text" id="project_status1" placeholder="project_status" class="form-control"/>
-                </div>
+					<select class="selectpicker" id="project_status1">
+  <option>lead</option>
+  <option>opportunity</option>
+  <option>proposal</option>
+  <option>quotation</option>
+  <option>ra</option>
+  <option>design</option>
+  <option>testing</option>
+  <option>development</option>
+  <option>support</option>
+  <option>maintenance</option>
+  <option>invoice</option>
+  <option>delivery</option>
+  <option>cancelled</option>
+  <option>delayed</option>
+  <option>completed</option>
+  </select> 
+                    </div>
+   
 				<div class="form-group">
                     <label for="category_proserv_project">category_proserv_project</label>
-                    <input type="text" id="category_proserv_project1" placeholder="category_proserv_project" class="form-control"/>
-                </div>
+					<select class="selectpicker" id="category_proserv_project1">
+  <option>service</option>
+  <option>project</option>
+  </select>
+                    </div>
            
 				
             </div>
@@ -322,12 +342,31 @@
                 </div>
 				<div class="form-group">
                     <label for="project_status">project_status</label>
-                    <input type="text" id="update_project_status1" placeholder="project_status" class="form-control"/>
-                </div>
+					<select class="selectpicker" id="update_project_status1">
+  <option>lead</option>
+  <option>opportunity</option>
+  <option>proposal</option>
+  <option>quotation</option>
+  <option>ra</option>
+  <option>design</option>
+  <option>testing</option>
+  <option>development</option>
+  <option>support</option>
+  <option>maintenance</option>
+  <option>invoice</option>
+  <option>delivery</option>
+  <option>cancelled</option>
+  <option>delayed</option>
+  <option>completed</option>
+  </select> 
+                    </div>
 				<div class="form-group">
                     <label for="category_proserv_project">category_proserv_project</label>
-                    <input type="text" id="update_category_proserv_project" placeholder="category_proserv_project" class="form-control"/>
-                </div>
+					<select class="selectpicker" id="update_category_proserv_project">
+  <option>service</option>
+  <option>project</option>
+  </select>
+                    </div>
 
             </div>
             <div class="modal-footer">

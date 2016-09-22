@@ -275,7 +275,14 @@
                 </div>
 				<div class="form-group">
                     <label for="email">Role</label>
-                    <input type="text" id="role" placeholder="Role" class="form-control"/>
+					<select class="selectpicker" id="role">
+  <option>admin</option>
+  <option>sales</option>
+  <option>project_manager</option>
+  <option>company</option>
+</select>
+
+                    
                 </div>
 
             </div>
@@ -318,8 +325,13 @@
                 </div>
 				<div class="form-group">
                     <label for="update_email">Role</label>
-                    <input type="text" id="update_role" placeholder="role" class="form-control"/>
-                </div>
+					<select class="selectpicker" id="update_role">
+  <option>admin</option>
+  <option>sales</option>
+  <option>project_manager</option>
+  <option>company</option>
+</select>
+                    </div>
 
             </div>
             <div class="modal-footer">
