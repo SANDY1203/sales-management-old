@@ -213,10 +213,10 @@ function DeleteCompany(company_id) {
 function DeleteCompany1() {
     var conf = confirm("Are you sure, do you really want to delete User?");
     if (conf == true) {
-		var id = $("#hidden_delete_company_id").val();
+		var company_id = $("#hidden_delete_company_id").val();
 		
         $.post("ajax/deleteCompany.php", {
-                id: id
+                company_id: company_id
             },
             function (data, status) {
                 // reload Users by using readRecords();
@@ -248,11 +248,11 @@ function GetCompanyDetails(company_id) {
     $("#update_company_modal").modal("show");
 }
 
-function ViewCompany(id) {
+function ViewCompany(company_id) {
     // Add User ID to the hidden field for furture usage
-    $("#hidden_delete_company_id").val(id);
-    $.post("ajax/readUserDetails.php", {
-            id: id
+    $("#hidden_delete_company_id").val(company_id);
+    $.post("ajax/readCompanyDetails.php", {
+            company_id: company_id
         },
         function (data, status) {
             // PARSE json data
@@ -374,7 +374,7 @@ function DeleteContact(id) {
 }
 
 function DeleteContact1() {
-    var conf = confirm("Are you sure, do you really want to delete User?");
+    var conf = confirm("Are you sure, do you really want to delete Contact?");
     if (conf == true) {
 		var id = $("#hidden_delete_contact_id").val();
 		
@@ -424,7 +424,7 @@ function ViewContact(id) {
             var user = JSON.parse(data);
             // Assing existing values to the modal popup fields
 
-            $("#view_id21").val(user.id21);
+            $("#view_id21").val(user.id);
             $("#view_contact_name").val(user.contact_name);
             $("#view_contact_position").val(user.contact_position);
             $("#view_contact_number_one").val(user.contact_number_one);
@@ -786,7 +786,7 @@ function ViewProject(id) {
             var user = JSON.parse(data);
             // Assing existing values to the modal popup fields
 
-            $("#view_id23").val(user.id23);
+            $("#view_id23").val(user.id);
             $("#view_project_name").val(user.project_name);
             $("#view_project_desc").val(user.project_desc);
             $("#view_project_company_id").val(user.project_company_id);
@@ -958,7 +958,7 @@ function ViewProserv(id) {
             var user = JSON.parse(data);
             // Assing existing values to the modal popup fields
 
-            $("#view_id24").val(user.id24);
+            $("#view_id24").val(user.id);
             $("#view_product_name").val(user.product_name);
             $("#view_product_description").val(user.product_description);
             $("#view_product_start_price").val(user.product_start_price);
@@ -1249,7 +1249,7 @@ function DeleteQuestions1() {
             },
             function (data, status) {
                 // reload Users by using readRecords();
-				$("#view_questions_modal").modal("hide");
+				$("#view_question_modal").modal("hide");
                 readRecordsQuestions();
             }
         );
@@ -1286,7 +1286,7 @@ function ViewQuestions(id) {
             var user = JSON.parse(data);
             // Assing existing values to the modal popup fields
 
-            $("#view_id26").val(user.id26);
+            $("#view_id26").val(user.id);
             $("#view_question").val(user.question);
         
         }
@@ -1386,10 +1386,10 @@ function DeleteTeam(team_id) {
 function DeleteTeam1() {
     var conf = confirm("Are you sure, do you really want to delete Team?");
     if (conf == true) {
-		var id = $("#hidden_delete_team_id").val();
+		var team_id = $("#hidden_delete_team_id").val();
 		
         $.post("ajax/deleteTeam.php", {
-                id: id
+                team_id: team_id
             },
             function (data, status) {
                 // reload Users by using readRecords();
@@ -1421,11 +1421,11 @@ function GetTeamDetails(team_id) {
     $("#update_team_modal10").modal("show");
 }
 
-function ViewTeam(id) {
+function ViewTeam(team_id) {
     // Add User ID to the hidden field for furture usage
-    $("#hidden_delete_team_id").val(id);
+    $("#hidden_delete_team_id").val(team_id);
     $.post("ajax/readTeamDetails.php", {
-            id: id
+            team_id: team_id
         },
         function (data, status) {
             // PARSE json data
@@ -1544,10 +1544,10 @@ function DeleteTeam_Members(team_m_id) {
 function DeleteTeam_Members1() {
     var conf = confirm("Are you sure, do you really want to delete Team MEMBERS?");
     if (conf == true) {
-		var id = $("#hidden_delete_team_members_id").val();
+		var team_m_id = $("#hidden_delete_team_members_id").val();
 		
         $.post("ajax/deleteTeam_Members.php", {
-                id: id
+                team_m_id: team_m_id
             },
             function (data, status) {
                 // reload Users by using readRecords();
@@ -1583,11 +1583,11 @@ function GetTeam_MembersDetails(team_m_id) {
     $("#update_team_members_modal").modal("show");
 }
 
-function ViewTeam_Members(id) {
+function ViewTeam_Members(team_m_id) {
     // Add User ID to the hidden field for furture usage
-    $("#hidden_delete_team_members_id").val(id);
+    $("#hidden_delete_team_members_id").val(team_m_id);
     $.post("ajax/readTeam_MembersDetails.php", {
-            id: id
+            team_m_id: team_m_id
         },
         function (data, status) {
             // PARSE json data

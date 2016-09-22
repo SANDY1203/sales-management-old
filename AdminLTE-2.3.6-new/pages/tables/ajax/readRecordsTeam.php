@@ -31,6 +31,7 @@
 				 <td>'. $row['team_lead'] . '</td>
               
 				<td>
+				<button onclick="ViewTeam('.$row['team_id'].')" class="btn btn-info">View</button>
 					<button onclick="GetTeamDetails('.$row['team_id'].')" class="btn btn-warning">Update</button>
 				
 		

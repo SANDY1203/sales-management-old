@@ -36,6 +36,7 @@
                 <td>'. $row['team_m_employement_status'] . '</td>
 				<td>'. $row['team_id'] . '</td>
 				<td>
+				<button onclick="ViewTeam_Members('.$row['team_m_id'].')" class="btn btn-info">View</button>
 					<button onclick="GetTeam_MembersDetails('.$row['team_m_id'].')" class="btn btn-warning">Update</button>
 			
 					<button onclick="DeleteTeam_Members('.$row['team_m_id'].')" class="btn btn-danger">Delete</button>

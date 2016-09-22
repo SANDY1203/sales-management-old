@@ -104,6 +104,7 @@
                 <td>'. $row['user_id'] . '</td>
 				
 				<td>
+				<button onclick="ViewProject('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetProjectDetails('.$row['id'].')" class="btn btn-warning">Update</button>
 			
 					<button onclick="DeleteProject('.$row['id'].')" class="btn btn-danger">Delete</button>

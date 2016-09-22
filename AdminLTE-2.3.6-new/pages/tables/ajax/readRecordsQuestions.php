@@ -29,6 +29,7 @@
 			     <td>'. $row['question'] . '</td>
 
 				<td>
+				<button onclick="ViewQuestions('.$row['id'].')" class="btn btn-info">View</button>
 				 <button onclick="GetQuestionsDetails('.$row['id'].')" class="btn btn-warning">Update</button>
 				
 				 <button onclick="DeleteQuestions('.$row['id'].')" class="btn btn-danger">Delete</button>

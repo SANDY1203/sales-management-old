@@ -305,6 +305,49 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="view_team_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel"><b><output id ="view_team_name" style="display:inline; font-size:80%;"> </output></b></h2>
+            </div>
+            <div class="modal-body">
+			
+					
+					<div class="x_content">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <br>
+                    <!-- main details -->
+                    <div id="mainb">
+                        <div class="col-md-12">
+                            <div class="col-md-7">
+                                <!--TODO upload employee images-->
+                                <img style="width: 120px; height: 120px" class="img-responsive img-circle" alt="No Image" src="api/avatars/">
+                            </div>
+                            <div class="col-md-5 project_detail">
+                                <p class="ng-binding"><span class="title control-label">Team ID:</span><output id ="view_team_id" style="display:inline"> </output></p>
+                                <p class="ng-binding"><span class="title control-label">Team Lead:</span><output id ="view_team_lead" style="display:inline"> </output></p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end main details -->
+
+                    <!-- ngIf: vm.user.plays.data -->
+                </div>
+            </div>
+									
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="DeleteTeam1()" >Delete</button>
+                <input type="hidden" id="hidden_delete_team_id">
+            </div>
+        </div>
+    </div>
+</div>
 <!-- // Modal -->
           </div>
           <!-- /.box -->

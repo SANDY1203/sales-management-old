@@ -9,7 +9,7 @@ if(isset($_POST['id']) && isset($_POST['id']) != "")
     $proserv_id = $_POST['id'];
 
     // delete User
-    $query = "DELETE FROM proserv WHERE id = '$id'";
+    $query = "DELETE FROM proserv WHERE id = '$proserv_id'";
     if (!$result = mysql_query($query)) {
         exit(mysql_error());
     }

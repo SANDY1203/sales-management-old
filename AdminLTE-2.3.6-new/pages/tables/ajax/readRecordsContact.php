@@ -39,6 +39,7 @@
                 <td>'. $row['contact_email_two'] . '</td>
 				<td>'. $row['contact_company_allo'] . '</td>
 				<td>
+				<button onclick="ViewContact('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetContactDetails('.$row['id'].')" class="btn btn-warning">Update</button>
 				
 					<button onclick="DeleteContact('.$row['id'].')" class="btn btn-danger">Delete</button>

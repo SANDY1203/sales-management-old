@@ -38,6 +38,7 @@
 				 <td>'. $row['category_proserv_project'] . '</td>
                 
 				<td>
+				<button onclick="ViewProserv_Project('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetProserv_ProjectDetails('.$row['id'].')" class="btn btn-warning">Update</button>
 				
 					<button onclick="DeleteProserv_Project('.$row['id'].')" class="btn btn-danger">Delete</button>

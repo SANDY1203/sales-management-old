@@ -35,6 +35,7 @@
                 <td>'. $row['company_email'] . '</td>
 				<td>'. $row['user_id'] . '</td>
 				<td>
+				<button onclick="ViewCompany('.$row['company_id'].')" class="btn btn-info">View</button>
 					<button onclick="GetCompanyDetails('.$row['company_id'].')" class="btn btn-warning">Update</button>
 				
 				

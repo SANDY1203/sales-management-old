@@ -41,6 +41,7 @@
                 <td>'. $row['remarks'] . '</td>
 				<td>'. $row['contact_id'] . '</td>
 				<td>
+				<button onclick="ViewFeedback('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetFeedbackDetails('.$row['id'].')" class="btn btn-warning">Update</button>
 				
 					<button onclick="DeleteFeedback('.$row['id'].')" class="btn btn-danger">Delete</button>

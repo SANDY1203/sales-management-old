@@ -35,6 +35,7 @@
                 <td>'. $row['product_end_price'] . '</td>
 				<td>'. $row['category'] . '</td>
 				<td>
+				<button onclick="ViewProserv('.$row['id'].')" class="btn btn-info">View</button>
 					<button onclick="GetProservDetails('.$row['id'].')" class="btn btn-warning">Update</button>
 				
 					<button onclick="DeleteProserv('.$row['id'].')" class="btn btn-danger">Delete</button>
