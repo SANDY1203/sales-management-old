@@ -336,51 +336,36 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
+                <h2 class="modal-title" id="myModalLabel"><b><output id ="view_first_name" style="display:inline; font-size:80%;"> </output> <output id ="view_last_name" style="display:inline; font-size:80%;"> </output></b></h2>
             </div>
             <div class="modal-body">
 			
 					
-					<dl class="dl-horizontal">
-					  <dt>ID</dt>
-					  <dd><output id ="view_id"></output></dd>
-					  <dt>Last Name</dt>
-					  <dd><output id ="view_last_name"></output></dd>
-					  <dt>Job</dt>
-					  <dd>Something</dd>
-					  <dt>First Name</dt>
-					  <dd>Foo</dd>
-					  <dt>Last Name</dt>
-					  <dd>Bar</dd>
-					  <dt>Job</dt>
-					  <dd>Something</dd>
-					</dl>
-					
-					
-                <div class="form-group">
-                    <label for="view_id">ID</label><output id ="view_id"> </output>
-                    
-                </div>
-				<div class="form-group">
-                    <label for="view_first_name">First Name:</label><output id ="view_first_name"> </output>
-                    
-                </div>
+					<div class="x_content">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <br>
+                    <!-- main details -->
+                    <div id="mainb">
+                        <div class="col-md-12">
+                            <div class="col-md-7">
+                                <!--TODO upload employee images-->
+                                <img style="width: 120px; height: 120px" class="img-responsive img-circle" alt="No Image" src="api/avatars/">
+                            </div>
+                            <div class="col-md-5 project_detail">
+                                <p class="ng-binding"><span class="title control-label">ID:</span><output id ="view_id" style="display:inline"> </output></p>
+                                <p class="ng-binding"><span class="title control-label">Email:</span><output id ="view_email" style="display:inline"> </output></p>
+                                <p class="ng-binding"><span class="title control-label">Password:</span><output id ="view_password" style="display:inline"> </output></p>
+                                <p class="ng-binding"><span class="title control-label">Role:</span></span><output id ="view_role" style="display:inline"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end main details -->
 
-                <div class="form-group">
-                    <label for="view_last_name">Last Name:</label><output id ="view_last_name"> </output>
+                    <!-- ngIf: vm.user.plays.data -->
                 </div>
-
-                <div class="form-group">
-                    <label for="view_email">Email Address:</label><output id ="view_email"> </output>
-                </div>
-				<div class="form-group">
-                    <label for="view_email">Password:</label><output id ="view_password"> </output>
-                </div>
-				<div class="form-group">
-                    <label for="view_email">Role:</label><output id ="view_role"> </output>
-                </div>
-
             </div>
+									
+                </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" onclick="DeleteUser1()" >Delete</button>
