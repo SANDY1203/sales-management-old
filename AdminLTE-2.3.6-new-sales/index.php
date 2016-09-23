@@ -42,7 +42,11 @@
 
   <header class="main-header">
     <!-- Logo -->
+<<<<<<< HEAD
     <a href="index.html" class="logo">
+=======
+    <a href="index.php" class="logo">
+>>>>>>> origin/combine
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -82,7 +86,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -119,6 +123,7 @@
       </form>
            <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
+<<<<<<< HEAD
       <ul class="sidebar-menu">
 	          
         <li class="treeview">
@@ -139,39 +144,84 @@
 		<li class="treeview">
           <a href="contact.php">
             <i class="fa fa-table"></i> <span>CONTACT</span>
+=======
+     <ul class="sidebar-menu">
+	          
+        <li class="treeview">
+          <a href="index.php">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
           </a>
           
         </li>
+		
+		<li class="treeview">
+          <a href="pages/tables/company.php">
+            <i class="fa fa-table"></i> <span>COMPANY</span>
+>>>>>>> origin/combine
+            
+          </a>
+          
+        </li>
+<<<<<<< HEAD
 		
        
           
         </li>
 		<li class="treeview">
           <a href="project.php">
+=======
+		<li class="treeview">
+          <a href="pages/tables/contact.php">
+            <i class="fa fa-table"></i> <span>CONTACT</span>
+            
+          </a>
+          
+        </li>
+		<li class="treeview">
+          <a href="pages/tables/project.php">
+>>>>>>> origin/combine
             <i class="fa fa-table"></i> <span>PROJECT</span>
             
           </a>
           
         </li>
 		<li class="treeview">
+<<<<<<< HEAD
           <a href="proserv.php">
+=======
+          <a href="pages/tables/proserv.php">
+>>>>>>> origin/combine
             <i class="fa fa-table"></i> <span>PROSERV</span>
             
           </a>
           
         </li>
 		<li class="treeview">
+<<<<<<< HEAD
           <a href="proserv_project.php">
+=======
+          <a href="pages/tables/proserv_project.php">
+>>>>>>> origin/combine
             <i class="fa fa-table"></i> <span>PROSERV PROJECT</span>
             
           </a>
           
         </li>
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> origin/combine
         
         
       </ul>
+	          
+        
+		
+        
+        
+     
     </section>
     <!-- /.sidebar -->
   </aside>

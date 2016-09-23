@@ -42,7 +42,11 @@
 
   <header class="main-header">
     <!-- Logo -->
+<<<<<<< HEAD
     <a href="index.html" class="logo">
+=======
+    <a href="index.php" class="logo">
+>>>>>>> origin/combine
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -82,7 +86,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -122,33 +126,53 @@
       <ul class="sidebar-menu">
 	          
         <li class="active treeview">
+<<<<<<< HEAD
           <a href="index.html">
+=======
+          <a href="index.php">
+>>>>>>> origin/combine
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
           </a>
           
         </li>
 		<li class="active treeview">
+<<<<<<< HEAD
           <a href="pages/tables/user.php">
             <i class="fa fa-table"></i> <span>USERS</span>
+=======
+          <a href="pages/tables/project.php">
+            <i class="fa fa-table"></i> <span>PROJECT</span>
+>>>>>>> origin/combine
             
           </a>
           
         </li>
 		<li class="active treeview">
+<<<<<<< HEAD
           <a href="pages/tables/company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
+=======
+          <a href="pages/tables/team.php">
+            <i class="fa fa-table"></i> <span>TEAM</span>
+>>>>>>> origin/combine
             
           </a>
           
         </li>
 		<li class="active treeview">
+<<<<<<< HEAD
           <a href="pages/tables/contact.php">
             <i class="fa fa-table"></i> <span>CONTACT</span>
+=======
+          <a href="pages/tables/team_member.php">
+            <i class="fa fa-table"></i> <span>TEAM MEMBERS</span>
+>>>>>>> origin/combine
             
           </a>
           
         </li>
+<<<<<<< HEAD
 		<li class="active treeview">
           <a href="pages/tables/feedback.php">
             <i class="fa fa-table"></i> <span>FEEDBACK</span>
@@ -198,6 +222,8 @@
           </a>
           
         </li>
+=======
+>>>>>>> origin/combine
 		
         
         

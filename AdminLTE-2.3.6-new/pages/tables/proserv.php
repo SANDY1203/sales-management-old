@@ -92,7 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -273,8 +273,10 @@
                 </div>
 				<div class="form-group">
                     <label for="category">category</label>
-                    <input type="text" id="category" placeholder="category" class="form-control"/>
-                </div>
+                    <select class="selectpicker" id="category">
+  <option>service</option>
+  <option>product</option>
+  </select></div>
 				
 
             </div>
@@ -317,8 +319,10 @@
                 </div>
 				<div class="form-group">
                     <label for="ans_4">category</label>
-                    <input type="text" id="update_category" placeholder="category" class="form-control"/>
-                </div>
+                    <select class="selectpicker" id="update_category">
+  <option>service</option>
+  <option>product</option>
+  </select></div>
 				
 
             </div>

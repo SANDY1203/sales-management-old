@@ -92,7 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -275,7 +275,14 @@
                 </div>
 				<div class="form-group">
                     <label for="email">Role</label>
-                    <input type="text" id="role" placeholder="Role" class="form-control"/>
+					<select class="selectpicker" id="role">
+  <option>admin</option>
+  <option>sales</option>
+  <option>project_manager</option>
+  <option>company</option>
+</select>
+
+                    
                 </div>
 
             </div>
@@ -318,8 +325,13 @@
                 </div>
 				<div class="form-group">
                     <label for="update_email">Role</label>
-                    <input type="text" id="update_role" placeholder="role" class="form-control"/>
-                </div>
+					<select class="selectpicker" id="update_role">
+  <option>admin</option>
+  <option>sales</option>
+  <option>project_manager</option>
+  <option>company</option>
+</select>
+                    </div>
 
             </div>
             <div class="modal-footer">

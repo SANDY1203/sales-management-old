@@ -92,7 +92,11 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
+<<<<<<< HEAD
                   <a href="#" class="btn btn-default btn-flat">Sign out</a>
+=======
+                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
+>>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -127,7 +131,11 @@
               </span>
         </div>
       </form>
+<<<<<<< HEAD
           <!-- /.search form -->
+=======
+      <!-- /.search form -->
+>>>>>>> origin/combine
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
@@ -137,8 +145,13 @@
             
           </a>
           
+<<<<<<< HEAD
        
         </li>
+=======
+        </li>
+		
+>>>>>>> origin/combine
 		<li class="treeview">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
@@ -153,10 +166,13 @@
           </a>
           
         </li>
+<<<<<<< HEAD
 		
        
           
         </li>
+=======
+>>>>>>> origin/combine
 		<li class="treeview">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
@@ -178,7 +194,11 @@
           </a>
           
         </li>
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> origin/combine
         
         
       </ul>
@@ -251,8 +271,29 @@
                 
 				<div class="form-group">
                     <label for="project_status">project_status</label>
+<<<<<<< HEAD
                     <input type="text" id="project_status" placeholder="project_status" class="form-control"/>
                 </div>
+=======
+					<select class="selectpicker" id="project_status">
+  <option>lead</option>
+  <option>opportunity</option>
+  <option>proposal</option>
+  <option>quotation</option>
+  <option>ra</option>
+  <option>design</option>
+  <option>testing</option>
+  <option>development</option>
+  <option>support</option>
+  <option>maintenance</option>
+  <option>invoice</option>
+  <option>delivery</option>
+  <option>cancelled</option>
+  <option>delayed</option>
+  <option>completed</option>
+  </select> 
+                    </div>
+>>>>>>> origin/combine
 				
 				<div class="form-group">
                     <label for="user_id">user_id</label>
@@ -303,8 +344,29 @@
                 
 				<div class="form-group">
                     <label for="project_status">project_status</label>
+<<<<<<< HEAD
                     <input type="text" id="update_project_status" placeholder="project_status" class="form-control"/>
                 </div>
+=======
+					<select class="selectpicker" id="update_project_status">
+  <option>lead</option>
+  <option>opportunity</option>
+  <option>proposal</option>
+  <option>quotation</option>
+  <option>ra</option>
+  <option>design</option>
+  <option>testing</option>
+  <option>development</option>
+  <option>support</option>
+  <option>maintenance</option>
+  <option>invoice</option>
+  <option>delivery</option>
+  <option>cancelled</option>
+  <option>delayed</option>
+  <option>completed</option>
+  </select> 
+                    </div>
+>>>>>>> origin/combine
 
                      
 				<div class="form-group">

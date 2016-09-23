@@ -92,7 +92,11 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
+<<<<<<< HEAD
                   <a href="#" class="btn btn-default btn-flat">Sign out</a>
+=======
+                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
+>>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -137,8 +141,13 @@
             
           </a>
           
+<<<<<<< HEAD
        
         </li>
+=======
+        </li>
+		
+>>>>>>> origin/combine
 		<li class="treeview">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
@@ -153,10 +162,13 @@
           </a>
           
         </li>
+<<<<<<< HEAD
 		
        
           
         </li>
+=======
+>>>>>>> origin/combine
 		<li class="treeview">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
@@ -178,7 +190,11 @@
           </a>
           
         </li>
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> origin/combine
         
         
       </ul>

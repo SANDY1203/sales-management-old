@@ -92,7 +92,11 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
+<<<<<<< HEAD
                   <a href="#" class="btn btn-default btn-flat">Sign out</a>
+=======
+                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
+>>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -127,7 +131,11 @@
               </span>
         </div>
       </form>
+<<<<<<< HEAD
            <!-- /.search form -->
+=======
+      <!-- /.search form -->
+>>>>>>> origin/combine
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
@@ -137,8 +145,13 @@
             
           </a>
           
+<<<<<<< HEAD
        
         </li>
+=======
+        </li>
+		
+>>>>>>> origin/combine
 		<li class="treeview">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
@@ -153,10 +166,13 @@
           </a>
           
         </li>
+<<<<<<< HEAD
 		
        
           
         </li>
+=======
+>>>>>>> origin/combine
 		<li class="treeview">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
@@ -178,7 +194,11 @@
           </a>
           
         </li>
+<<<<<<< HEAD
 	
+=======
+		
+>>>>>>> origin/combine
         
         
       </ul>
@@ -243,8 +263,15 @@
                 </div>
 				<div class="form-group">
                     <label for="category">category</label>
+<<<<<<< HEAD
                     <input type="text" id="category" placeholder="category" class="form-control"/>
                 </div>
+=======
+                    <select class="selectpicker" id="category">
+  <option>service</option>
+  <option>product</option>
+  </select></div>
+>>>>>>> origin/combine
 				
 
             </div>
@@ -287,8 +314,15 @@
                 </div>
 				<div class="form-group">
                     <label for="ans_4">category</label>
+<<<<<<< HEAD
                     <input type="text" id="update_category" placeholder="category" class="form-control"/>
                 </div>
+=======
+                    <select class="selectpicker" id="update_category">
+  <option>service</option>
+  <option>product</option>
+  </select></div>
+>>>>>>> origin/combine
 				
 
             </div>
